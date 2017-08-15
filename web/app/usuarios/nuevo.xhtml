@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template/templateInterface.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:b="http://bootsfaces.net/ui">
+
+  <ui:define name="titulo">Administrador-Registrar Usuario</ui:define>
+
+    <ui:define name="contenido">
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="purple">
+                                <h4 class="title">#{mensajeApp.newUser}</h4>
+                                <p class="category">Registrar Usuario</p>
+                            </div>
+                            <div class="card-content">
+                                <b:messages globalOnly="true" showSummary="true" show-detail="true"/>
+                                <b:message for="form-registro" showSummary="true" show-detail="true"/>
+                                <b:form id="form-registro" prependId="false">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">#{mensajeApp.documento}</label>
+                                                <b:inputText name="document" value="#{registroController.nuevoUsuario.cedula}" class="form-control" a:data-mask="0000000000" required="true"/>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">#{mensajeApp.firtsName}</label>
+                                                <b:inputText value="#{registroController.nuevoUsuario.nombres}" class="form-control" required="true"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">#{mensajeApp.firtsLastName}</label>
+                                                <b:inputText value="#{registroController.nuevoUsuario.apellidos}" class="form-control" required="true"/>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">#{mensajeApp.birt}</label>
+                                                <b:datepicker value="#{registroController.nuevoUsuario.fechaNaci}" class="form-control" changeYear="true" changeMonth="true" required="true"/>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">#{mensajeApp.password}</label>
+                                                <b:inputSecret value="#{registroController.nuevoUsuario.clave}" class="form-control" required="true"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h:link styleClass="btn btn-primary" outcome="/app/usuarios/listar.xhtml" value="#{mensajeApp.back}"/>
+                                    <b:commandButton value="#{mensajeApp.save}" icon="floppy-disk" actionListener="#{registroController.registrar()}" class="btn btn-primary pull-right"/>
+
+
+                                    <div class="clearfix"></div>
+                                </b:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ui:define>
+</ui:composition>
+

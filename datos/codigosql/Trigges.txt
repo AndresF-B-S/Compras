@@ -1,0 +1,2 @@
+DROP TRIGGER IF EXISTS `tr_usuario_before_insert`;CREATE DEFINER=`root`@`localhost` TRIGGER `tr_usuario_before_insert` BEFORE INSERT ON `usuarios` FOR EACH ROW SET NEW.clave =  fc_encriptar(new.clave),
+new.fecha_registro = CURRENT_DATE

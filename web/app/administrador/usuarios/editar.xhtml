@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template/templateInterfaz.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui">
+        <ui:define name="titulo">Administrador-Editar Usuario</ui:define>
+
+
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="/app/index.html">Administrador</a>
+                <i class="fa fa-circle"></i>
+            </li>
+             <li>
+                <a href="/app/administrador/usuarios/usuarios.html">Usuarios</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">Cambiar datos</span>
+            </li>
+        </ul>
+
+    </ui:define>
+    <ui:define name="contenido">
+
+        <div class="col-sm-12">
+            <div class="portlet light bordered">
+                <div class="portlet-title">
+                    <div class="caption font-dark">
+                        <i class="icon-settings font-dark"></i>
+                        <span class="caption-subject bold uppercase">Editar Usuario</span>
+                    </div>
+                    <div class="tools"> </div>
+                </div>
+                <b:messages showSummary="true" class="animated flipInX"  show-detail="true"/>
+              
+                <b:form id="form-editar" prependId="false">
+                    <b:panelGrid colSm="12" columns="2">
+                        <h:outputText value="Documento"/>
+                        <b:inputText value="#{editarUsuarioController.usuarioSelecionado.cedula}" />
+                        <h:outputText value=" nombres"/>
+                        <b:inputText value="#{editarUsuarioController.usuarioSelecionado.nombres}"/>
+                        <h:outputText value=" apellidos"/>
+                        <b:inputText value="#{editarUsuarioController.usuarioSelecionado.apellidos}"/>
+                             <h:outputText value="Correo"/>
+                             <b:dataTableColumn  value="#{editarUsuarioController.usuarioSelecionado.correoElectronico}" >
+                             </b:dataTableColumn>
+                                
+                        <h:outputText value="Fecha Nacimiento"/>
+                        <b:datepicker  value="#{editarUsuarioController.usuarioSelecionado.fechaNaci}"  />
+
+                        <h:outputText value="clave"/>
+                        <b:inputText value="#{editarUsuarioController.usuarioSelecionado.clave}"/>
+
+                        <h:outputText value="Roles del usuario"/>
+                        <h:selectManyCheckbox value="#{editarUsuarioController.usuarioSelecionado.roles}" converter="rolConverter" class="form-control"
+                                              >
+                            <f:selectItems value="#{rolContoller.roles}"  var="r" itemLabel="#{r.nombre}"/>
+                        </h:selectManyCheckbox>
+                        <br/>
+                    </b:panelGrid>
+                    <h:link styleClass="btn btn-primary" outcome="/app/usuarios/listar.xhtml" value="Volver"/>
+                    <b:commandButton value="Guardar" icon="floppy-disk" actionListener="#{editarUsuarioController.actualizarDatos()}"/>
+                </b:form>
+            </div>
+        </div>
+
+
+
+    </ui:define>
+</ui:composition>
+

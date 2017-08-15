@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template/templateInterface.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:ps="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:b="http://bootsfaces.net/ui"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+   <ui:define name="titulo">Administrador - Ver Aplazamiento</ui:define>
+
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="/app/index.xhtml">Aplazamiento</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <a href="">Aplazamiento</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">Ver Aplazamiento</span>
+            </li>
+        </ul>
+
+    </ui:define>
+
+
+    <ui:define name="contenido">
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="blue">
+                                <i class="material-icons">info_outline</i>
+                                <h4 class="title">Ver Aplazamiento</h4>
+                                <p class="category">Aquí puedes ver la información de tus aplazamientos</p>
+                            </div>
+                            <div class="card-content">
+                                <b:messages showSummary="true" show-detail="true"/>
+                                <b:message for="form-editar" showSummary="true" show-detail="true"/>
+                                <h:form id="form-editar" prependId="false">
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Cedula</label>
+                                                <h:outputText value="#{verAplazamientoClienteController.aplazamiento.motivo}" class="form-control"  />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Nombres</label>
+                                                <h:outputText value="#{verAplazamientoClienteController.aplazamiento.inicio}" class="form-control">
+                                                <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                                </h:outputText>
+                                            </div>
+                                        </div>
+                                         <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Apellidos</label>
+                                                <h:outputText value="#{verAplazamientoClienteController.aplazamiento.fin}" class="form-control">
+                                                <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                                </h:outputText>
+                                            </div>
+                                        </div>
+                                      
+                                    </div>
+
+
+
+
+                                    <h:link styleClass="btn btn-primary" outcome="/app/index.xhtml" value="Volver"/>
+
+                                </h:form>
+
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">local_offer</i> Maternity Club
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </ui:define>
+</ui:composition>
+

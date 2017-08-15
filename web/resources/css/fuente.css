@@ -1,0 +1,113 @@
+@font-face {
+    font-family: AmaticSC-Bold;
+    src: url(../fonts/Amatic_SC/AmaticSC-Bold.ttf);
+}
+
+@font-face {
+    font-family: AmaticSC-Regular;
+    src: url(../fonts/Amatic_SC/AmaticSC-Regular.ttf);
+}
+
+@font-face {
+    font-family: BadScript-Regular;
+    src: url(../fonts/Audiowide/Audiowide-Regular.ttf);
+}
+
+@font-face {
+    font-family: Chewy;
+    src: url(../fonts/Chewy/Chewy.ttf);
+}
+
+@font-face {
+    font-family: Courgette-Regular;
+    src: url(../fonts/Courgette/Courgette-Regular.ttf);
+}
+
+@font-face {
+    font-family: Farsan-Regular;
+    src: url(../fonts/Farsan/Farsan-Regular.ttf);
+}
+
+@font-face {
+    font-family: GloriaHallelujah;
+    src: url(../fonts/Gloria_Hallelujah/GloriaHallelujah.ttf);
+}
+
+@font-face {
+    font-family: IndieFlower;
+    src: url(../fonts/Indie_Flower/IndieFlower.ttf);
+}
+
+@font-face {
+    font-family: Lobster-Regular;
+    src: url(../fonts/Lobster/Lobster-Regular.ttf);
+}
+
+@font-face {
+    font-family: Rock_Salt/RockSalt;
+    src: url(../fonts/Rock_Salt/RockSalt.ttf);
+}
+
+@font-face {
+    font-family: Satisfy-Regular;
+    src: url(../fonts/Satisfy/Satisfy-Regular.ttf);
+}
+
+@font-face {
+    font-family: Tangerine_Bold;
+    src: url(../fonts/Tangerine/Tangerine_Bold.tff);
+}
+
+@font-face {
+    font-family: Tangerine_Regular;
+    src: url(../fonts/Tangerine/Tangerine_Regular.tff);
+}
+
+@font-face {
+    font-family: Tillana-Bold;
+    src: url(../fonts/Tillana/Tillana-Bold.ttf);
+}
+
+@font-face {
+    font-family: Tillana-ExtraBold;
+    src: url(../fonts/Tillana/Tillana-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: Tillana-Medium;
+    src: url(../fonts/Tillana/Tillana-Medium.ttf);
+}
+
+@font-face {
+    font-family: Tillana-Regular;
+    src: url(../fonts/Tillana/Tillana-Regular.ttf);
+}
+
+@font-face {
+    font-family: Tillana-SemiBold;
+    src: url(../fonts/Tillana/Tillana-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Yellowtail-regular;
+    src: url(../fonts/Yellowtail/Yellowtail-Regular.ttf);
+}
+
+@font-face {
+    font-family: CHERI_BLACK;
+    src: url(../fonts/CHERI___.TTF);
+}
+
+@font-face {
+    font-family: CHERL_WHITE;
+    src: url(../fonts/CHERL___.TTF);
+}
+
+@font-face {
+    font-family: Handlee-Regular;
+    src: url(../fonts/Handlee-Regular.ttf);
+}
+
+body{
+    font-family: Handlee-Regular;
+}

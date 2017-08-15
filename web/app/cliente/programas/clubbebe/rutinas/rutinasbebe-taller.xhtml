@@ -1,0 +1,283 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template/templateInterface.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:v="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui">
+
+
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="index.xhtml">Administrador</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <a href="inscripciones.xhtml">Inscripciones</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">Registrar Inscripciones</span>
+            </li>
+        </ul>
+
+    </ui:define>
+    <ui:define name="contenido">
+        <div class="content">
+            <div class="container-fluid">
+
+                <div class="container">
+                    <div class="jumbotron jumbo">
+                        <h1>Taller de Primeros Auxilios para Padres y Cuidadores</h1>
+                    </div>
+                </div>
+
+
+                <br/><br/>
+                <div class="jumbo">
+                    <p class="text-center" style="font-size: 20px;">Es muy importante para las familias estar alerta, cuidar todas las precauciones en el hogar y saber responder ante la emergencia lo más rápidamente posible.</p>
+                    <p><h:link class="btn btn-white btn-md" value="Inscribirme!" style="color: #9C27B0;font-weight: 800;"></h:link></p>
+                </div>
+
+
+                <b:row>
+                    <div class="col-md-12">
+
+                        <div class="col-md-4">
+
+                            <div class="row form-group">
+                                <div class="panel panel-default">
+                                    <div class="panel-image">
+                                        <img src="#{request.contextPath}/resources/img/cita.jpg" class="panel-image-preview" />
+                                        <label for="toggle-4"></label>
+                                    </div>
+                                    <input type="checkbox" id="toggle-4" checked="" class="panel-image-toggle"/>
+                                    <div class="panel-body">
+                                        <h4>CONTENIDO </h4>
+                                        <p style="text-align: justify">
+                                            <ul>
+                                                <li>Introducción al Soporte Vital Básico (SVB) pediátrico (desde lactantes hasta adolescentes)</li>
+                                                <li>Técnicas de SVB: desobstrucción de la vía aérea (atraganta-miento), posición lateral de seguridad, quemaduras, cohibir hemorragia, contusiones,</li>
+                                                <li>Prácticas secuencia reanimación cardiopulmonar (RCP) con maniquí pediátrico.</li>
+                                                <li>Plan de actuación ante una parada cardiaca en niñ@s</li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                    <div class="panel-footer text-center">
+                                        <a href="#download"><span class="glyphicon glyphicon-download"></span></a>
+                                        <a href="#facebook"><span class="fa fa-facebook"></span></a>
+                                        <a href="#twitter"><span class="fa fa-twitter"></span></a>
+                                        <a href="#share"><span class="glyphicon glyphicon-share-alt"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+
+                            <div class="row form-group">
+                                <div class="panel panel-default">
+
+
+                                    <div class="panel-body">
+                                        <h4>OBJETIVO</h4>
+                                        <p style="text-align: justify">Curso de aplicación muy práctica tiene por objetivo proporcionar los conocimientos y habilidades necesarios para actuar en situaciones como atragantamientos, desmayos, quemaduras, fiebres, golpes, ahogamientos… y prestar una ayuda eficaz a nuestros hij@s. Así como muchos aspectos relacionados con la prevención de los mismos.
+                                        </p>
+                                    </div>
+                                    <div class="panel-footer text-center">
+                                        <a href="#download"><span class="glyphicon glyphicon-download"></span></a>
+                                        <a href="#facebook"><span class="fa fa-facebook"></span></a>
+                                        <a href="#twitter"><span class="fa fa-twitter"></span></a>
+                                        <a href="#share"><span class="glyphicon glyphicon-share-alt"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="panel panel-default">
+
+                                    <div class="panel-body">
+                                        <h4>PARA QUIENES</h4>
+                                        <p style="text-align: justify">
+
+                                            Está dirigido a madres y padres, abuelos, cuidadores o personas que en su actividad profesional están rodeadas de bebés o niños
+                                        </p>
+                                    </div>
+                                    <div class="panel-footer text-center">
+                                        <a href="#download"><span class="glyphicon glyphicon-download"></span></a>
+                                        <a href="#facebook"><span class="fa fa-facebook"></span></a>
+                                        <a href="#twitter"><span class="fa fa-twitter"></span></a>
+                                        <a href="#share"><span class="glyphicon glyphicon-share-alt"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </b:row>
+
+                <br/>
+                <div><p class="text-center" style="font-size: 30px;">OTROS PROGRAMAS PRENTALES</p></div>
+                <br/><br/>
+                <b:row>
+
+                    <div class="col-md-12">
+
+                        <div class="col-md-4 col-sm-2">
+                            <div class="card-container">
+                                <div class="card">
+                                    <div class="front">
+                                        <div class="cover" style="height: 160px;">
+
+                                            <img src="#{request.contextPath}/resources/img/imghome/clubBebe/baby-rumba.jpg" class="img-responsive img-thumbnail" />
+                                        </div>
+
+                                        <div class="content">
+                                            <div class="main">
+                                                <h3 class="name" style="font-size: 16px">Baby Rumba </h3>
+                                                <p class="profession">Actividades</p>
+
+                                                <p class="text-center" style="text-align: justify">A partir del tercer mes, cada pareja debe traer canguro para la clase.</p>
+                                            </div>
+                                            <div class="footer">
+                                                <i class="fa fa-mail-forward"></i> Inscribete
+                                            </div>
+                                        </div>
+                                    </div> <!-- end front panel -->
+                                    <div class="back">
+                                        <div class="header">
+                                            <h5 class="motto">"Maternity Manager"</h5>
+                                        </div>
+                                        <div class="content" style="padding: 0px 2px 0px;">
+                                            <h:form>
+                                                <div class="main">
+                                                    <h4 class="text-center" style="margin: 0">Descripción</h4>
+                                                    <p class="profession">
+                                                        <ul style="padding: 0px 20px;">
+                                                            <li style="font-size: 13px;text-align: justify">Ritmo y movimiento generan en el bebé la <b>estimulación</b> sensorial y el <b>control vestibular</b>, mejorando la <b>tonificación</b> neuromuscular. Activa la conexión papás - bebé, generando seguridad y tranquilidad.</li>
+
+
+
+                                                        </ul>
+                                                    </p>
+
+                                                    <center><h:link class="btn btn-info" value="Inscribirme!" outcome="/app/cliente/servicios/citamedica/citamedica.xhtml"></h:link></center>
+
+                                                </div>
+                                            </h:form>
+                                        </div>
+
+                                    </div> <!-- end back panel -->
+                                </div> <!-- end card -->
+                            </div> <!-- end card-container -->
+                        </div> <!-- end col-sm-3 -->
+
+                        <div class="col-md-4 col-sm-2">
+                            <div class="card-container">
+                                <div class="card">
+                                    <div class="front">
+                                        <div class="cover" style="height: 160px;">
+
+                                            <img src="#{request.contextPath}/resources/img/imghome/clubBebe/taller-shantala.jpg"/>
+                                        </div>
+
+                                        <div class="content">
+                                            <div class="main">
+                                                <h3 class="name" style="font-size: 16px">Taller de Shantala</h3>
+                                                <p class="profession">Primero tu salud</p>
+                                                <p class="text-center" style="text-align: justify;">Se realiza a partir de la primer mes de vida.</p>
+                                            </div>
+                                            <div class="footer" style="margin: 20px 0 0;">
+                                                <i class="fa fa-mail-forward"></i> Inscribete
+                                            </div>
+                                        </div>
+                                    </div> <!-- end front panel -->
+                                    <div class="back">
+                                        <div class="header" style="height: 70px;">
+                                            <h5 class="motto">Maternity Manager</h5>
+                                        </div>
+                                        <div class="content" style="padding: 0px 2px 0px;">
+                                            <h:form>
+                                                <div class="main">
+                                                    <h4 class="text-center" style="margin: 0">Descripción</h4>
+                                                    <p class="profession">
+                                                        <ul style="padding: 0px 20px;">
+                                                            <li style="font-size: 13px;text-align: justify">El <b>arte </b>de <b>acariciar</b> a tú bebé, técnica Hindu de <b>estimulación</b> a través del masaje. Regula el sistema digestivo, circulatorio, respiratorio y musculo- esqueletico; activa conexion afectiva con sus padres.</li>
+                                                        </ul>
+                                                    </p>
+
+                                                    <center><h:link class="btn btn-info" value="Inscribirme!" outcome="/app/cliente/servicios/citamedica/citamedica.xhtml"></h:link></center>
+
+                                                </div>
+                                            </h:form>
+                                        </div>
+
+                                    </div> <!-- end back panel -->
+                                </div> <!-- end card -->
+                            </div> <!-- end card-container -->
+                        </div> <!-- end col sm 3 -->
+
+                        <div class="col-md-4 col-sm-2">
+                            <div class="card-container">
+                                <div class="card">
+                                    <div class="front">
+                                        <div class="cover" style="height: 160px;">
+                                            <img src="#{request.contextPath}/resources/img/imghome/programas/club-bebe-reco.jpg"/>
+                                        </div>
+
+                                        <div class="content">
+                                            <div class="main">
+                                                <h3 class="name" style="font-size: 16px">Yoga Baby</h3>
+                                                <p class="profession">Curso</p>
+
+                                                <p class="text-center" style="text-align: justify">A partir del tercer mes.</p>
+                                            </div>
+                                            <div class="footer">
+                                                <i class="fa fa-mail-forward"></i> Inscribete
+                                            </div>
+                                        </div>
+                                    </div> <!-- end front panel -->
+                                    <div class="back">
+                                        <div class="header">
+                                            <h5 class="motto">"Maternity Manager"</h5>
+                                        </div>
+                                        <div class="content">
+                                            <h:form>
+                                                <div class="main">
+                                                    <h4 class="text-center">Descripción</h4>
+                                                    <p class="text-center">Enterate</p>
+                                                    <p class="profession" style="text-align: justify">
+                                                        <ul style="padding: 0px 20px;">
+                                                            <li style="text-align: justify">Los movimientos suaves, armónicos y controlados del Yoga Baby favorecen la relajación y el equilibrio del bebé y la mamá.</li>
+                                                        </ul>
+
+                                                    </p>
+
+
+                                                    <center><h:link class="btn btn-info" value="Inscribirme!"></h:link></center>
+
+                                                </div>
+                                            </h:form>
+                                        </div>
+
+                                    </div> <!-- end back panel -->
+                                </div> <!-- end card -->
+                            </div> <!-- end card-container -->
+                        </div> <!-- end col-sm-3 -->
+
+                    </div> <!-- end col-sm-10 -->
+                </b:row>
+
+
+
+
+            </div>
+        </div>
+
+
+
+    </ui:define>
+</ui:composition>
+

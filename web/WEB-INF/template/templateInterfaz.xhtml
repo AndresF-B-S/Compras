@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <h:head>
+        <title><ui:insert name="titulo"> asigne un titulo</ui:insert></title>
+        <ui:include src="/WEB-INF/template/templateInterfaz/head.xhtml"/>
+    </h:head>
+
+    <h:body class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo">
+        <f:view locale="#{sessionController.seleccionarLenguaje}">
+        <ui:include src="/WEB-INF/template/templateInterfaz/newnavbar.xhtml" />
+
+        <!-- BEGIN HEADER & CONTENT DIVIDER -->
+        <div class="clearfix"> </div>
+        <!-- END HEADER & CONTENT DIVIDER -->
+
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+
+            <ui:include src="/WEB-INF/template/templateInterfaz/newsidebar.xhtml" />
+            <ui:include src="/WEB-INF/template/templateInterfaz/newpage-header.xhtml" />
+          
+            
+        </div>
+        <!-- END CONTAINER -->
+        <ui:include src="/WEB-INF/template/templateInterfaz/newfooter.xhtml" />
+        <ui:include src="/WEB-INF/template/templateInterfaz/scrips.xhtml" />
+</f:view>
+    </h:body>
+</html>
+

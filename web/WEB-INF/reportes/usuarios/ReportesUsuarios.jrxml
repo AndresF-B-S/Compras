@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportesUsuarios" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryNewPage="true" uuid="5ef37454-d5e8-4486-a21c-82e964b9df09">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="cedula" class="java.lang.Long"/>
+	<field name="primerNombre" class="java.lang.String"/>
+	<field name="segundoNombre" class="java.lang.String"/>
+	<field name="primerApellido" class="java.lang.String"/>
+	<field name="segundoApellido" class="java.lang.String"/>
+	<field name="fechaNaci" class="java.util.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Transparent" x="130" y="24" width="330" height="40" forecolor="#000000" backcolor="#FFFFFF" uuid="d36f8c77-3722-47ec-af19-da5f0ba1fae1"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Vijaya" size="36" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Maternity Manager]]></text>
+			</staticText>
+			<image>
+				<reportElement mode="Transparent" x="0" y="5" width="129" height="69" uuid="0756a19b-ea44-4527-9941-2f17c7b3bb0c"/>
+				<imageExpression><![CDATA["favicon.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="90" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="19" y="10" width="190" height="27" forecolor="#000000" backcolor="#FFFFFF" uuid="44ab9d01-acce-45a7-824a-0687a481491f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="18" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Reportes de Usuarios]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="1" y="45" width="554" height="41" uuid="b39de0e7-5f53-444e-9219-6c39440673e1"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="439" y="57" width="112" height="20" forecolor="#FFFFFF" backcolor="#FF6699" uuid="04ae218a-9bf0-4990-91d9-9a6b5fb8cdfe"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Timeless" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Fecha Nacimiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="96" y="57" width="144" height="20" forecolor="#FFFFFF" backcolor="#FF6699" uuid="4842a6a5-5feb-43a7-8f9e-f20aefbc41b5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Timeless" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Nombres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="255" y="57" width="176" height="20" forecolor="#FFFFFF" backcolor="#FF6699" uuid="fa8fdac2-52b4-4fbe-98e5-ba90d8406d2a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Timeless" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="17" width="47" height="20" uuid="01b0da56-addf-4a40-a001-2fca15c8464f"/>
+				<text><![CDATA[Pág. No.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="507" y="17" width="43" height="20" uuid="609eab4d-ba6f-45c8-8903-51fe8eea01d3"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="17" y="57" width="70" height="20" forecolor="#FFFFFF" backcolor="#FF6699" uuid="e88e2c93-79fe-4a30-ad45-cb9febf79e1e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Timeless" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single" tabStopWidth="40"/>
+				</textElement>
+				<text><![CDATA[Cedula]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="8" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement x="33" y="11" width="48" height="20" uuid="9876ccf8-46dc-40f1-9d02-27376dcb5bc1"/>
+				<textFieldExpression><![CDATA[$F{cedula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="109" y="11" width="59" height="20" uuid="99c01ffc-d44d-4c5e-96c6-b2909e5819f0"/>
+				<textFieldExpression><![CDATA[$F{primerNombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="268" y="11" width="81" height="20" uuid="8d20a84e-c6f9-475f-a659-c0a38d14a7a6"/>
+				<textFieldExpression><![CDATA[$F{primerApellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="11" width="81" height="20" uuid="c5fa5b32-cc75-4674-bacf-9cea168506cb"/>
+				<textFieldExpression><![CDATA[$F{fechaNaci}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="169" y="11" width="56" height="20" uuid="852e738e-0d05-4eb6-b8f0-66cc8c0ec49d"/>
+				<textFieldExpression><![CDATA[$F{segundoNombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="349" y="11" width="71" height="20" uuid="62a264de-934e-4b82-a2da-3d0a30e347f9"/>
+				<textFieldExpression><![CDATA[$F{segundoApellido}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="10" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="45" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="441" y="17" width="100" height="20" uuid="440225a2-8209-45cf-bea7-992e08765575"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="388" y="17" width="47" height="20" uuid="973e1ed6-a393-4620-a05c-9950c8f48657"/>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="17" width="147" height="20" uuid="3464821a-a498-4ca0-b32f-ff112adb6b31"/>
+				<text><![CDATA[Maternity Club Spa & Gym]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="10" width="541" height="3" uuid="45c757d4-504f-4e74-a5fe-2b5b6b7dba77"/>
+				<graphicElement>
+					<pen lineWidth="1.75"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="8" splitType="Stretch"/>
+	</summary>
+</jasperReport>

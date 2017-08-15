@@ -1,0 +1,135 @@
+.profile 
+{
+    min-height: 355px;
+    display: inline-block;
+    }
+figcaption.ratings
+{
+    margin-top:20px;
+    }
+figcaption.ratings a
+{
+    color:#f1c40f;
+    font-size:11px;
+    }
+figcaption.ratings a:hover
+{
+    color:#f39c12;
+    text-decoration:none;
+    }
+.divider 
+{
+    border-top:1px solid rgba(0,0,0,0.1);
+    }
+.emphasis 
+{
+    border-top: 4px solid transparent;
+    }
+.emphasis:hover 
+{
+    border-top: 4px solid #1abc9c;
+    }
+.emphasis h2
+{
+    margin-bottom:0;
+    }
+span.tags 
+{
+    background: #1abc9c;
+    border-radius: 2px;
+    color: #f5f5f5;
+    font-weight: bold;
+    padding: 2px 4px;
+    }
+.dropdown-menu 
+{
+    
+    background-color: #392230;    
+    color: #ff708a;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    width: 250px;
+    
+   
+    }
+.dropdown-menu .divider 
+{
+    background:none;    
+    }
+.dropdown-menu>li>a
+{
+    color:#f5f5f5;
+    }
+.dropup .dropdown-menu 
+{
+    
+    margin-bottom:10px;
+    }
+.dropup .dropdown-menu:before 
+{
+    content: "";
+    border-top: 10px solid #34495e;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -10px;
+    z-index: 10;
+    }
+
+/*Control de usuarios-usuario*/
+/*usuario*/
+
+        .dual-list .list-group {
+            margin-top: 8px;
+        }
+
+        .list-left li, .list-right li {
+            cursor: pointer;
+        }
+
+        .list-arrows {
+            padding-top: 100px;
+        }
+
+            .list-arrows button {
+                margin-bottom: 20px;
+            }
+/*usuario*/
+
+
+/*Control de usuarios-usuario FIN*/
+
+body{
+     
+      overflow-x: hidden;
+        overflow-y: visible;
+    background: #ebeff1;
+
+
+}
+::-webkit-scrollbar {
+      width: 9px;
+}
+::-webkit-scrollbar-track {
+      background-color: transparent;
+    
+} 
+::-webkit-scrollbar-thumb {
+      background-color: #E1BEE7;
+    border-radius: 5px;
+    border: 1px solid #E1BEE7;
+} ::-webkit-scrollbar-button {
+      background-color: #7B1FA2;
+    height: 5px;
+    border-radius: 2px 0 0 2px; 
+}
+::-webkit-scrollbar-corner {
+      background-color: red;
+}
+.dropdown-menu{
+    
+}
+
+

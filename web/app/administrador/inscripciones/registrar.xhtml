@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template/templateInterface.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:v="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:define name="titulo">Administrador-Registrar Inscripciones</ui:define>
+
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="index.xhtml">Administrador</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <a href="/app/administrador/inscripciones/inscripciones.xhtml">Inscripciones</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">Registrar Inscripciones</span>
+            </li>
+        </ul>
+
+    </ui:define>
+    <ui:define name="contenido">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="purple">
+                                <h4 class="title">Registrar Inscripciones</h4>
+                                <p class="category">Aquí puedes registrar las inscripción de un cliente de Maternity Club, registrado previamente</p>
+                            </div>
+                            <div class="card-content">
+                                <b:messages showSummary="true" show-detail="true" class="animated flipInX"  />
+                                <b:form id="form-editar" prependId="false">
+                                        <div class="row">
+                                        
+                                    
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Servicio</label>
+                                                <b:selectOneMenu value="#{registroInscripcionController.nuevoInscripcion.fkIdCurso}" class="form-control">
+                                                
+                                                    <f:selectItems value="#{listarCursosController.cursos}" var="c" itemLabel=" Nombre: #{c.idServicios.nombre} - Descripción: #{c.idServicios.descripcion}"/>
+                                                </b:selectOneMenu>
+                                            </div>
+                                        </div>
+                           
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Cliente</label>
+                                                <b:selectOneMenu value="#{registroInscripcionController.nuevoInscripcion.idUsuario}" class="form-control">
+                                                
+                                                    <f:selectItems value="#{listarClienteController.clientees}" var="cl" itemLabel="Cedula: #{cl.idUsuario} - Nombre: #{cl.usuario.nombres}"/>
+                                                </b:selectOneMenu>
+                                            </div>
+                                        </div>
+                                  </div>
+
+                                    <h:link styleClass="btn btn-primary" outcome="/app/administrador/inscripciones/inscripciones.xhtml" value="Volver"/>
+                                    <b:commandButton value="Guardar" icon="floppy-disk" actionListener="#{registroInscripcionController.registrar()}" class="btn btn-primary pull-right"/>
+
+                                    <div class="clearfix"></div>
+                                </b:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </ui:define>
+</ui:composition>
+

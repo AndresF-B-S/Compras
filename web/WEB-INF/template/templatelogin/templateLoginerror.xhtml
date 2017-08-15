@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+
+
+
+
+        <ui:include src="/WEB-INF/template/templatelogin/head.xhtml"/>
+
+    </h:head>
+    <h:body>
+        <!-- Mixins-->
+        <!-- Pen Title-->
+        <div class=" col-md-3" style="background-color: #ed2553; border-radius: 0px 20px 20px 0px; box-shadow:  5px 5px 5px 5px #fff;">
+            <div class="pull-left col-md-1" style="background-color:#ed2553;"></div>
+            <h1 style="font-family: Handlee-Regular; color: #fff;" align="center">No pudimos validar tus datos</h1> <h6 align="center"><span style="align-content: center; color: #fff;">Verifica que tus datos se han los correctos</span></h6> 
+        </div>
+
+        <div class="container">
+            <div class=""></div>
+        
+
+            <ui:include src="/WEB-INF/template/templatelogin/ingresar.xhtml"/>
+
+
+
+
+        </div>
+
+        <!-- CodePen--><a id="codepen" href="#{request.contextPath}/home.xhtml" title="Follow me!"><i class="fa fa-home fa-2x"></i></a>
+
+
+
+        <ui:include src="/WEB-INF/template/templatelogin/scripts.xhtml"/>
+    </h:body>
+</html>
+

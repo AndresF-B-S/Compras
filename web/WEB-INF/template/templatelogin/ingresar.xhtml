@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pst="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:v="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <div class="card" style="margin-top: 5%;">
+        <div class="row">
+            <div class="toggle" title="Registrarme!"></div>
+            <div class="col-md-8">
+                <h1 class="title">#{msjLogin.titleIngresar}</h1>
+            </div>
+
+            <div class="col-md-4">
+
+                <h:form>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+                            #{msjApp.idioma} <span class="caret"></span>
+                        </button>
+
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <c:forEach items="#{sessionController.supportLanguages}" var="l" >
+                                <li>
+                                    <h:commandLink  value="#{msjApp[l.displayLanguage]}" action="#{sessionController.cambiarIdioma(l)}">
+                                        <img src="#{request.contextPath}/resources/img/languages/#{l.language}.png" width="25px" alt="#{msjApp[l.displayLanguage]}"/>
+                                    </h:commandLink>
+                                </li>
+                            </c:forEach>
+                        </ul>
+                    </div>
+
+                </h:form>
+            </div>
+        </div>
+
+        <div>
+            <b:messages  showSummary="true" showDetail="true"  globalOnly="true"/>
+            
+        </div>
+
+        <h:form class="login-form"  id="login" prependId="false">
+
+            <div id="usuario" class="form-action show">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="icon_profile"></i></span>
+                        <h:inputText id="username" class="form-control" pst:placeholder="#{msjLogin.placeholderDocumento}" pst:autofocus="true"  value="#{sessionController.documento}"/>
+                        <h:message for="username" />
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+                        <h:inputSecret id="password"  class="form-control" pst:placeholder="#{msjLogin.placeholderPassword}" value="#{sessionController.clave}"/>
+                        <h:message for="password" />
+                    </div>
+
+                </div>
+                <div class="forgot">
+                    <a href="#personal" type="button" ><span id="boton2">#{msjLogin.valueForgotPassword}</span></a>
+                </div>
+
+                <div class="button-container">
+                    <b:commandButton  type="submit"  action="#{sessionController.iniciarSesion()}" ><span>#{msjLogin.valueingresar}</span> </b:commandButton>
+                </div>
+                <div class="footer">
+                    <a href="#registro" type="button" >#{msjLogin.buttonRegistrar}</a>  
+                </div>
+            </div>
+        </h:form>
+
+
+        <div id="personal" class="form-action hide">
+
+            <div class="form-title">
+                <span class="form-title">#{msjLogin.valueForgotPassword}</span><br/><br/>
+                <span class="form-subtitle">#{msjLogin.subtituloOlvideCon}</span>
+            </div>
+
+            <h:form prependId="false" id="form-3">
+                <div class="form-group">
+                    <h:inputText v:type="text"  v:name="cedula" id="cedula" required="true" maxlength="15" tabindex="1" value="#{controllerEmailContrasena.cedula}"/>
+                    <label for="cedula">#{msjLogin.numDocumento}</label>
+                    <div class="bar"></div>
+                </div>
+                <div class="form-group">
+                    <h:inputText v:type="email"  id="Password" v:name="Password" required="true" value="#{controllerEmailContrasena.email}" tabindex="2"></h:inputText> 
+                    <label for="email">#{msjLogin.CorreoOlvideCon}</label>
+                    <div class="bar"></div>
+                </div>
+
+                <div class="button-container">
+                    <b:commandButton type="submit" action="#{controllerEmailContrasena.enviarMensaje()}" v:target="_parent" ><span>#{msjLogin.Enviar}</span></b:commandButton>
+
+                </div>
+                <div class="forgot" style="margin: 30px 280px 0px 0; font-size: 20px;">
+                    <a href="#usuario" type="button" ><span id="boton2">#{msjLogin.Atras}</span></a>
+                </div>
+                <b:messages showSummary="true" showDetail="true" globalOnly="true"/>
+
+            </h:form>
+        </div>
+        <!-- Fin Div Usuario -->
+        <!--- Registrar Usuario-->
+            <b:form prependId="false" id="form-4">
+        <div id="registro" class="form-action hide">
+
+            <div class="form-title">
+                <span class="form-title">#{msjRegister.titleRegistrate}</span><br/><br/>
+                <span class="form-subtitle">#{msjRegister.valueRegisterWelcome}</span>
+            </div>
+
+                
+                <div class=" col-md-12 col-lg-12" style="margin: none;">
+                    <div class="form-group " style="margin: none;">
+                        <b:label v:for="r" text="Número de documento"></b:label>
+                        <b:inputText  v:name="r" id="r" required="true" maxlength="15" tabindex="1" value="#{registroController.nuevoUsuario.cedula}"/>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="form-group " style="margin: none;">
+                        <b:label v:for="e" text="#{msjRegister.labelNombre}"></b:label>
+                        <b:inputText  id="e" v:name="e" required="true" value="#{registroController.nuevoUsuario.nombres}" tabindex="2"></b:inputText> 
+                        <div class="bar"></div>
+                    </div>
+
+                    <div class="form-group ">
+                        <b:label v:for="po" text="#{msjRegister.labelApellido}"></b:label>
+                        <b:inputText v:type="text"  v:name="po" id="po" required="true" maxlength="15" tabindex="1" value="#{registroController.nuevoUsuario.apellidos}"/>
+                        <div class="bar"></div>
+                    </div>
+
+                    <div class="form-group datepicker ">
+                        <b:label v:for="y" text="#{msjRegister.labelFechaNacimiento}"></b:label>
+                        <b:datepicker  v:name="y" id="y" required="true"  changeYear="true" changeMonth="true" tabindex="1" value="#{registroController.nuevoUsuario.fechaNaci}"/>
+                        <div class="bar"></div>
+                    </div>
+
+                   <div class="form-group ">
+                       <b:label v:for="w" text="#{msjRegister.labelContraseña}"></b:label>
+                       <b:inputSecret  id="w" v:name="w" required="true" value="#{registroController.nuevoUsuario.clave}" tabindex="2"></b:inputSecret> 
+                        <div class="bar"></div>
+                    </div>
+                </div>
+
+
+                <div class="button-container">
+                    
+                    <b:commandButton type="submit"  v:target="_parent" action="#{registroController.registrar()}" value="Registrar"><span>#{msjRegister.btnRegistrar}</span></b:commandButton>
+
+                </div>
+                <div class="forgot" style="margin: 30px 280px 0px 0; font-size: 20px;">
+                    <a href="#usuario" type="button" ><span id="boton2">#{msjLogin.Atras}</span></a>
+                </div>
+
+
+        </div>
+        </b:form>
+
+
+
+
+
+
+        <script>
+            $(document).ready(function () {
+                $('#login').formValidation({
+                    framework: 'bootstrap',
+                    icon: {
+                        valid: 'glyphicon glyphicon-ok',
+                        invalid: 'glyphicon glyphicon-remove',
+                        validating: 'glyphicon glyphicon-refresh'
+                    },
+                    fields: {
+                        username: {
+                            validators: {
+                                notEmpty: {
+                                    message: '#{msjValidacionLogin.nombreUsuarioRequerido}'
+                                },
+                                stringLength: {
+                                    min: '#{msjValidacionLogin.valorMinimo}',
+                                    max: '#{msjValidacionLogin.valorMax}',
+                                    message: '#{msjValidacionLogin.minYMaxCaracteres}'
+                                },
+                                regexp: {
+                                    regexp: /^[a-zA-Z0-9_]+$/,
+                                    message: '#{msjValidacionLogin.soloLetrarNumeros}'
+                                }
+                            }
+                        },
+                        password: {
+                            validators: {
+                                notEmpty: {
+                                    message: '#{msjValidacionLogin.contraseñaRequerida}'
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
+
+    </div>
+</html>
+

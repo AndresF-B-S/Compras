@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template/templateInterface.xhtml"
+
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:pst="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:define name="titulo">#{sessionController.usuario.nombres} #{sessionController.usuario.apellidos} </ui:define>
+    <ui:define name="pagetitle">
+        <!--        <div class="page-head">
+                    <div class="page-title">
+                        <h1> Perfil - Cambiar Datos
+                            <small>Mis datos personales</small>
+                        </h1>
+                    </div>
+                </div>-->
+    </ui:define>
+
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="#{request.contextPath}/app/index.xhtml">#{mensajeApp.inicio}</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">#{mensajeApp.cambiarDatos}</span>
+            </li>
+        </ul>
+
+    </ui:define>
+
+    <ui:define name="contenido">
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header" data-background-color="purple">
+                                <h4 class="title">Editar Perfil</h4>
+                                <p class="category">Completa tu perfil</p>
+                            </div>
+                            <div class="card-content">
+                                <h:form role="form">
+                                    <b:messages showDetail="true" showSummary="true" globalOnly="true"/>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Documento de Identidad</label>
+                                                <h:inputText  value="#{sessionController.usuario.cedula}" class="form-control" disabled="true" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Nombres</label>
+                                                <h:inputText  value="#{sessionController.usuario.nombres}" class="form-control"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Apellidos</label>
+                                                <h:inputText  value="#{sessionController.usuario.apellidos}" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Correo</label>
+                                                <h:inputText  value="#{sessionController.usuario.correoElectronico}" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Fecha de Nacimiento</label>
+                                                <h:inputText  value="#{sessionController.usuario.fechaNaci}" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h:commandButton action="#{modificarPerfilController.actualizarPerfil()}" value="Modificar Datos" class="btn btn-primary pull-right"/>
+                                    <div class="clearfix"></div>
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h:form role="form" enctype="multipart/form-data" prependId="false">
+                            <div class="card card-profile">
+                                <div class="card-avatar">
+                                    <a href="#pablo">
+                                        <img src="#{request.contextPath}#{sessionController.usuario.imagenPerfil}" class="img"/>
+
+                                    </a>
+                                </div>
+
+                                <div class="content">
+                                    <h4 class="card-title">#{sessionController.usuario.nombres} #{sessionController.usuario.apellidos}</h4>
+                                    <h6 class="category text-gray">#{sessionController.rolSeleccionado.nombre}</h6>
+                                    <p class="card-content">
+                                        Programa Actual <br/>
+                                        Rutina Actual <br/>
+                                    </p>
+                                    <h:inputFile id="fileUpload" class="btn btn-primary btn-round" value="Cambiar foto" />
+                                    <h:commandButton value="Cambiar foto" id="upload" class="btn default " actionListener="#{cargarArchivoController.uploadProfileImage}"/>
+                                </div>
+                            </div>
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </ui:define>
+
+</ui:composition>

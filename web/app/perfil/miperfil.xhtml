@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template/templateInterface.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="titulo">#{sessionController.usuario.nombres} #{sessionController.usuario.apellidos} </ui:define>
+    <ui:define name="pagetitle">
+        <!--        <div class="page-head">
+                    <div class="page-title">
+                        <h1> Mi Perfil
+                            <small>Mis metas</small>
+                        </h1>
+                    </div>
+                </div>-->
+    </ui:define>
+
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="#{request.contextPath}/app/index.xhtml">#{mensajeApp.inicio}</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">#{mensajeApp.myProfile}</span>
+            </li>
+        </ul>
+
+    </ui:define>
+
+
+    <ui:define name="contenido">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-profile">
+                            <div class="card-avatar">
+                                <a href="#pablo">
+                                    <img src="#{request.contextPath}#{sessionController.usuario.imagenPerfil}" class="img"/>
+
+                                </a>
+                            </div>
+
+                            <div class="content">
+                                <h4 class="card-title">#{sessionController.usuario.nombres} #{sessionController.usuario.apellidos}</h4>
+                                <h6 class="category text-gray">#{sessionController.rolSeleccionado.nombre}</h6>
+                                <p class="card-content">
+                                    Programa Actual <br/>
+                                    Rutina Actual <br/>
+                                </p>
+
+                                <h:link class="btn btn-primary btn-round" outcome="/app/perfil/cambiardatos.xhtml">Cambiar datos</h:link>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ui:define>
+</ui:composition>

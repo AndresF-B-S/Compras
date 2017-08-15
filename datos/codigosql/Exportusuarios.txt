@@ -1,0 +1,4 @@
+use mapris;
+SELECT * FROM usuarios INTO OUTFILE 'C:\\Users\\SMEGS\\Documents\\NetBeansProjects\\mapris\\datos\\usuarios.csv'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\n'

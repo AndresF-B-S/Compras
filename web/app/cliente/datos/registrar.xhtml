@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template/templateInterface.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:v="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui">
+
+
+    <ui:define name="titulo">Administrador-Registrar Dato Clinico</ui:define>
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="index.html">Administrador</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <a href="/app/administrador/datos/ver.xhtml">Datos Clinicos</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">Registrar Dato Clinico</span>
+            </li>
+        </ul>
+
+
+    </ui:define>
+    <ui:define name="contenido">
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="purple">
+                                <h4 class="title">Registrar Dato Clinico</h4>
+                                <p class="category">Aquí puedes registrar tus datos clinicos</p>
+                            </div>
+                            <div class="card-content">
+                                <b:messages class="animated flipInX"  showSummary="true" show-detail="true" />
+                                <b:form id="form-editar" role="form" enctype="multipart/form-data" prependId="false">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Tipo de sangre</label>
+                                                <b:selectOneMenu value="#{registroDatoClinicoController.nuevoDatoclinico.tipoSangre}">
+                                                    <f:selectItem itemValue="O+" itemLabel="O+"/> 
+                                                    <f:selectItem itemValue="O-" itemLabel="O-"/> 
+                                                    <f:selectItem itemValue="A+" itemLabel="A+"/> 
+                                                    <f:selectItem itemValue="A-" itemLabel="A-"/> 
+                                                    <f:selectItem itemValue="B+" itemLabel="B+"/> 
+                                                    <f:selectItem itemValue="B-" itemLabel="B-"/> 
+                                                    <f:selectItem itemValue="AB+" itemLabel="AB+"/> 
+                                                    <f:selectItem itemValue="AB-" itemLabel="AB-"/>                                                    
+                                                </b:selectOneMenu>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Alergias</label>
+                                                <b:selectOneMenu value="#{registroDatoClinicoController.nuevoDatoclinico.alergias}">
+                                                    <f:selectItem itemValue="Ninguna" itemLabel="Ninguna"/> 
+                                                    <f:selectItem itemValue="Alergia a un alimento" itemLabel="Alergia a un alimento"/> 
+                                                    <f:selectItem itemValue="Alergia al polvo" itemLabel="Alergia al polvo"/> 
+                                                    <f:selectItem itemValue="Alergia a un medicamento" itemLabel="Alergia a un medicamento"/> 
+                                                    <f:selectItem itemValue="Alergia cambios climaticos" itemLabel="Alergia a cambios climaticos"/> 
+
+                                                </b:selectOneMenu>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Patologia</label>
+                                                <b:selectOneMenu value="#{registroDatoClinicoController.nuevoDatoclinico.patologia}">
+                                                    <f:selectItem itemValue="Ninguna" itemLabel="Ninguna"/> 
+                                                    <f:selectItem itemValue="Hipertension arterial" itemLabel="Hipertensión"/> 
+                                                    <f:selectItem itemValue="Diabetes" itemLabel="Diabetes"/> 
+                                                    <f:selectItem itemValue="Migraña" itemLabel="Migraña"/> 
+                                                    <f:selectItem itemValue="Vascular" itemLabel="Vascular"/> 
+                                                    <f:selectItem itemValue="Pulmonar" itemLabel="Pulmonar"/> 
+                                                    <f:selectItem itemValue="Digestiva" itemLabel="Digestiva"/> 
+
+                                                </b:selectOneMenu>
+
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-4">
+                                            
+                                                <label class="control-label">Subir Dato Clinico</label>
+                                                <h:inputFile id="fileUpload" class="btn btn-primary btn-round" value="subir datos clinicos" ></h:inputFile>
+                                                <h:commandButton value="Subir" id="upload" class="btn default " actionListener="#{cargarArchivoController.uploadProfileClinicalData()}"/>
+
+                                        </div>
+                                        
+
+
+
+
+                                    </div>
+
+                                    <h:link styleClass="btn btn-primary" outcome="/app/index.xhtml" value="Volver"/>
+                                    <b:commandButton value="Guardar" icon="floppy-disk" actionListener="#{registroDatoClinicoController.registrar()}" class="btn btn-primary pull-right"/>
+
+                                    <div class="clearfix"></div>
+                                </b:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </ui:define>
+</ui:composition>
+

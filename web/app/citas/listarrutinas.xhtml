@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template/templateInterfaz.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:define name="titulo">#{sessionController.usuario.primerNombre}</ui:define>
+    <ui:define name="pagetitle">
+        <div class="page-head">
+            <div class="page-title">
+                <h1> Usuarios
+                    <small>Lista de usuarios</small>
+                </h1>
+            </div>
+        </div>
+    </ui:define>
+
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="index.html">Home</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">Listar</span>
+            </li>
+        </ul>
+
+    </ui:define>
+
+    <ui:define name="contenido">
+        <f:view>
+
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">CITAS</h4>
+                                    <p class="category">Citas programadas</p>
+                                </div>
+                                <div class="card-content table-responsive">
+
+                                    <b:messages globalOnly="true" showSummary="true" showDetail="true"/>
+                                    <h:form id="form-data-table-usuarios" prependId="false">
+
+                                        <b:dataTable value="#{listarRutinasController.rutinas}" var="item">
+
+
+                                            <b:dataTableColumn label="Id Rutinas" value="#{item.idRutinas}"/>
+                                            <b:dataTableColumn label="Nombre" value="#{item.nombre}"/>
+                                            <b:dataTableColumn label="Descripción" value="#{item.descripcion} "/>
+
+                                            <b:dataTableColumn  label="Opciones">
+                                                <b:commandButton
+                                                    look="success" value="" iconAwesome="eye"
+
+                                                    />
+                                                <b:commandButton look="primary" value="" iconAwesome="pencil"
+
+                                                                 />
+                                                <b:commandButton look="danger" value=""
+                                                                 iconAwesome="trash" tooltip="Eliminar"
+
+                                                                 >
+
+                                                </b:commandButton>
+                                                <b:commandButton look="default" value=""
+
+                                                                 />
+                                            </b:dataTableColumn>
+                                        </b:dataTable>
+
+                                    </h:form>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </f:view>
+
+    </ui:define>
+</ui:composition>
+

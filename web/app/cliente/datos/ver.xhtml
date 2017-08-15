@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template/templateInterface.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:ps="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:b="http://bootsfaces.net/ui"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <ui:define name="titulo">Administrador-Ver Dato Clinico</ui:define>
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="index.html">Administrador</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <a href="/app/index.html">Cliente</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">Ver Dato Clinico</span>
+            </li>
+        </ul>
+
+    </ui:define>
+
+
+
+
+    <ui:define name="contenido">
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="blue">
+                                <i class="material-icons">info_outline</i>
+                                <h4 class="title">Ver Dato Clinico</h4>
+                                <p class="category">Aquí puedes ver la información de la empresa registrada en Maternity Club</p>
+                            </div>
+                            <div class="card-content">
+                                <b:messages showSummary="true" show-detail="true" globalOnly="true"/>
+
+                                <b:form id="form-data-table-datos" prependId="false">
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Numero del curso</label>
+                                                <h:outputText value="#{verDatoClinicoController.datoClinicoCliente.tipoSangre}" class="form-control"  />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Estado</label>
+                                                <h:outputText value="#{verDatoClinicoController.datoClinicoCliente.alergias}" class="form-control"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Sesiones</label>
+                                                <h:outputText value="#{verDatoClinicoController.datoClinicoCliente.patologia}" class="form-control"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Sesiones</label>
+                                                
+
+
+                                               <object type="application/pdf" data="#{request.contextPath}#{verDatoClinicoController.datoClinicoCliente.url}?pfdrid_c=true" height="900px" width="100%" internalinstanceid="3">
+                                                    <a href="#{request.contextPath}/#{verDatoClinicoController.datoClinicoCliente.url}?pfdrid_c=true">click</a> to download pdf instead.
+                                                </object>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+                                </b:form>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">local_offer</i> Maternity Club
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </ui:define>
+</ui:composition>
+

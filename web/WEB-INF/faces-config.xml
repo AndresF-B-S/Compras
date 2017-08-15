@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <application>
+        <locale-config>
+            <default-locale>es</default-locale>
+            <supported-locale>es</supported-locale>
+            <supported-locale>en</supported-locale>
+        </locale-config>
+       
+        
+        
+        <resource-bundle>
+            <base-name>/MyBundle</base-name>
+            <var>myBundle</var>
+        </resource-bundle>
+        
+        <resource-bundle>
+            <base-name>com.mapris.languages.Login</base-name>
+            <var>msjLogin</var>
+        </resource-bundle>
+        
+        <resource-bundle>
+            <base-name>com.mapris.languages.validacion.LoginValidation</base-name>
+            <var>msjValidacionLogin</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>com.mapris.languages.app.App</base-name>
+            <var>mensajeApp</var>
+        </resource-bundle>
+        
+        <resource-bundle>
+            <base-name>com.mapris.languages.App</base-name>
+            <var>msjApp</var>
+        </resource-bundle>
+        
+        <resource-bundle>
+            <base-name>com.mapris.languages</base-name>
+            <var>msjTra</var>
+        </resource-bundle>
+
+        <resource-bundle>
+            <base-name>com.mapris.languages.Register</base-name>
+            <var>msjRegister</var>
+        </resource-bundle>
+        
+        <resource-bundle>
+            <base-name>com.mapris.languages.Home</base-name>
+            <var>msjHome</var>
+        </resource-bundle>
+        
+        <resource-bundle>
+            <base-name>com.mapris.languages.nav</base-name>
+            <var>msjModuloAdmin</var>
+        </resource-bundle>
+        
+        <resource-bundle>
+            <base-name>com.mapris.languages.foro</base-name>
+            <var>msjForo</var>
+        </resource-bundle>
+        
+        <resource-bundle>
+            <base-name>com.mapris.languages.perfil</base-name>
+            <var>msjPerfil</var>
+        </resource-bundle>
+        
+        <resource-bundle>
+            <base-name>com.mapris.languages.modals</base-name>
+            <var>msjModals</var>
+        </resource-bundle>
+        
+        <!--        <context-param>
+            <param-name>javax.faces.FACELETS_DECORATORS</param-name>
+            <param-value>
+                net.bootsfaces.decorator.BootsFacesTagDecorator
+            </param-value>
+        </context-param>-->
+        
+        <navigation-handler>org.primefaces.mobile.application.MobileNavigationHandler</navigation-handler>
+        
+    </application>
+</faces-config>

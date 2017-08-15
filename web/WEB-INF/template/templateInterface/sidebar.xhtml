@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+
+    <div class="sidebar" data-color="purple" data-image= "#{request.contextPath}/resources/img/sidebar-1.jpg">
+        <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+        Tip 2: you can also add an image using data-image tag
+        -->
+
+        <div class="logo">
+            <center>
+                <img src="#{request.contextPath}/resources/img/logos/miniLogo.png" alt="" ></img>
+            </center>
+        </div>
+
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+
+                <li class="active">
+                    <a href="#{request.contextPath}/app/index.xhtml">
+                        <i class="material-icons">person</i>
+                        <p>#{sessionController.rolSeleccionado.nombre}</p>
+                    </a>
+                </li>
+
+                <c:forEach items="#{sessionController.rolSeleccionado.permisos}" var="p">
+                    <c:if test="#{empty p.permisosPadre}">
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <!-- MODIFICAR ICONOS EN LA BD-->
+                                <i class="material-icons">account_circle</i>
+                                <span class="notification">#{mensajeApp[p.nombre]}</span>
+                                <p class="hidden-lg hidden-md">usuarios</p>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <c:forEach items="#{p.subPermisos}" var="sp">
+                                    <c:forEach items="#{sessionController.rolSeleccionado.permisos}" var="op">
+                                        <c:if test="#{(sp.id eq op.id)}">
+
+                                            <li>
+                                                <h:link outcome="#{sp.url}" value="#{mensajeApp[sp.nombre]}">
+
+                                                </h:link>
+
+                                            </li>
+
+                                        </c:if>
+                                    </c:forEach>
+                                </c:forEach>
+
+
+                            </ul>
+                        </li>
+
+                    </c:if>
+                </c:forEach>
+
+
+
+
+
+            </ul>
+        </div>
+    </div>
+
+</html>
+

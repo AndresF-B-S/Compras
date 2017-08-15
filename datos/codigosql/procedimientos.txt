@@ -1,0 +1,4 @@
+DROP PROCEDURE IF EXISTS pr_validar_usuario;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `pr_validar_usuario`(IN `pr_cedula` BIGINT(20), IN `pr_clave` VARCHAR(20))
+    NO SQL
+SELECT * FROM usuarios WHERE cedula = pr_cedula AND  clave = fc_encriptar(pr_clave)

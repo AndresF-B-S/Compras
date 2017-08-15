@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template/templateInterface.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:v="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui">
+
+
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="index.xhtml">Administrador</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <a href="inscripciones.xhtml">Inscripciones</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">Registrar Inscripciones</span>
+            </li>
+        </ul>
+
+    </ui:define>
+    <ui:define name="contenido">
+        <div class="content">
+            <div class="container-fluid">
+
+                <div class="container">
+                    <div class="jumbotron jumbo">
+                        <h1>Curso Psicoprofiláctico</h1>
+                        <p><h:link class="btn btn-white btn-md" value="Inscribirme!" style="color: #9C27B0;font-weight: 800;"></h:link></p>
+                    </div>
+                </div>
+
+
+                <br/><br/>
+                <div class="jumbo">
+                    <p class="text-center" style="font-size: 18px;background-color: darkturquoise;padding: 30px 20px;line-height: normal;box-shadow: 2px 2px 9px rgba(0,0,0,0.4);color: white;font-weight: 500; text-shadow: 1px 1px 2px rgba(0,0,0,0.4);">El curso es un proceso educativo que le permite a los padres obtener los conocimientos necesarios para resolver con serenidad las diferentes situaciones a las que se enfrentan durante la gestación, el parto, y los primeros meses de vida del bebé.</p>
+
+                </div><br/>
+
+
+                <b:row>
+                    <div class="col-md-12">
+
+                        <div class="col-md-4">
+
+                            <div class="row form-group">
+                                <div class="panel panel-default">
+                                    <div class="panel-image">
+                                        <img src="#{request.contextPath}/resources/img/cita.jpg" class="panel-image-preview" />
+                                        <label for="toggle-4"></label>
+                                    </div>
+                                    <input type="checkbox" id="toggle-4" checked="" class="panel-image-toggle"/>
+                                    <div class="panel-body">
+                                        <h4>¿EN QUE CONSISTE?</h4>
+                                        <p style="text-align: justify">se divide en 3 partes: <br/>
+                                            <ul>
+                                                <li><b>Ejercicio:</b> en esta parte se maneja el fortalecimiento de las abdominales, la relajación y la movilización de la pelvis</li>
+                                                <li><b>Teoria: </b> es fundamental dar un piso teórico al proceso del curso. En este aspecto nos enfocamos en el trabajo de parto</li>
+                                                <li><b>Pratica: </b>En este punto tratamos la respiración y la relajación que la mamá debe aprender a manejar. </li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                    <div class="panel-footer text-center">
+                                        <a href="#download"><span class="glyphicon glyphicon-download"></span></a>
+                                        <a href="#facebook"><span class="fa fa-facebook"></span></a>
+                                        <a href="#twitter"><span class="fa fa-twitter"></span></a>
+                                        <a href="#share"><span class="glyphicon glyphicon-share-alt"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+
+                            <div class="row form-group">
+                                <div class="panel panel-default">
+
+
+                                    <div class="panel-body">
+                                        <h4>BENEFICIOS </h4>
+                                        <p style="text-align: justify">La preparación física y los ejercicios para disminuir las molestias del embarazo, además de tener toda la información al respecto de la maternidad, le genera a la mamá un gran beneficio y le inyecta confianza.</p>
+                                    </div>
+                                    <div class="panel-footer text-center">
+                                        <a href="#download"><span class="glyphicon glyphicon-download"></span></a>
+                                        <a href="#facebook"><span class="fa fa-facebook"></span></a>
+                                        <a href="#twitter"><span class="fa fa-twitter"></span></a>
+                                        <a href="#share"><span class="glyphicon glyphicon-share-alt"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="panel panel-default">
+
+                                    <div class="panel-body">
+                                        <h4>PILATES</h4>
+                                        <p style="text-align: justify">Crear un nuevo centro de negocios dirigido por Enfermeras profesionales,  orientadas por las políticas de la institución.</p>
+                                    </div>
+                                    <div class="panel-footer text-center">
+                                        <a href="#download"><span class="glyphicon glyphicon-download"></span></a>
+                                        <a href="#facebook"><span class="fa fa-facebook"></span></a>
+                                        <a href="#twitter"><span class="fa fa-twitter"></span></a>
+                                        <a href="#share"><span class="glyphicon glyphicon-share-alt"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </b:row>
+
+                <br/>
+                <div><p class="text-center" style="font-size: 30px;">OTROS PROGRAMAS PRENATALES</p></div>
+                <br/><br/>
+                <b:row>
+
+                    <div class="col-md-12">
+
+
+                        <div class="col-md-4 col-sm-2">
+                            <div class="card-container">
+                                <div class="card">
+                                    <div class="front">
+                                        <div class="cover" style="height: 160px;">
+
+                                            <img src="#{request.contextPath}/resources/img/pre.jpg"/>
+                                        </div>
+
+                                        <div class="content">
+                                            <div class="main">
+                                                <h3 class="name" style="font-size: 16px">Programas de promoción y prevención</h3>
+                                                <p class="profession">Primero tu salud</p>
+                                                <p class="text-center" style="text-align: justify;">Piensan en tu bienestar y el del nuevo integrante de la familia antes, durante y después de su nacimiento.</p>
+                                            </div>
+                                            <div class="footer" style="margin: 20px 0 0;">
+                                                <i class="fa fa-mail-forward"></i> Inscribete
+                                            </div>
+                                        </div>
+                                    </div> <!-- end front panel -->
+                                    <div class="back">
+                                        <div class="header" style="height: 70px;">
+                                            <h5 class="motto">Maternity Manager</h5>
+                                        </div>
+                                        <div class="content" style="padding: 0px 2px 0px;">
+                                            <h:form>
+                                                <div class="main">
+                                                    <h4 class="text-center" style="margin: 0">Descripción</h4>
+                                                    <p class="profession">
+                                                        <ul style="padding: 0px 20px;">
+                                                            <li style="font-size: 13px;text-align: justify">Valoración de riesgo obstétrico y ejercicios realizados por una Gineco-Obstetra</li>
+                                                            <li style="font-size: 13px;text-align: justify">Valoración física realizada por profesional en Fisioterapia.</li>
+                                                            <li style="font-size: 13px;text-align: justify">Valoración nutricional realizada por Nutricionista.</li>
+                                                            <li style="font-size: 13px;text-align: justify">Talleres y conferencias prenatales a partir de la semana 14.</li>
+
+                                                        </ul>
+                                                    </p>
+
+                                                    <center><h:link class="btn btn-info" value="Ver mas!" outcome="/app/cliente/programas/prenatal/rutinas/rutinaspre-promocion.xhtml"></h:link></center>
+
+                                                </div>
+                                            </h:form>
+                                        </div>
+
+                                    </div> <!-- end back panel -->
+                                </div> <!-- end card -->
+                            </div> <!-- end card-container -->
+                        </div> <!-- end col sm 3 -->
+
+                        <div class="col-md-4 col-sm-2">
+                            <div class="card-container">
+                                <div class="card">
+                                    <div class="front">
+                                        <div class="cover" style="height: 160px;">
+
+                                            <img src="#{request.contextPath}/resources/img/imghome/prenatal/acondicionamineto-fisico.jpg" class="img-responsive img-thumbnail" />
+                                        </div>
+
+                                        <div class="content">
+                                            <div class="main">
+                                                <h3 class="name" style="font-size: 16px">Acondicionamiento Físico</h3>
+                                                <p class="profession">Talleres</p>
+
+                                                <p class="text-center" style="text-align: justify">Clases de Salón especialmente diseñadas para <b>total seguridad</b> de las embarazadas:</p>
+                                            </div>
+                                            <div class="footer">
+                                                <i class="fa fa-mail-forward"></i> Inscribete
+                                            </div>
+                                        </div>
+                                    </div> <!-- end front panel -->
+                                    <div class="back">
+                                        <div class="header">
+                                            <h5 class="motto">"Maternity Manager"</h5>
+                                        </div>
+                                        <div class="content">
+                                            <h:form>
+                                                <div class="main">
+                                                    <h4 class="text-center">Descripción</h4>
+                                                    <p class="text-center">Ralajate</p>
+                                                    <p class="profession">
+                                                        <ul>
+                                                            <li>YOGA.</li>
+                                                            <li>PILATES.</li>
+                                                            <li>ESFERODINAMIA.</li>
+                                                            <li>RUMBA.</li>
+                                                            <li>BODYJAM.</li>
+                                                        </ul>
+                                                    </p>
+
+
+                                                    <center><h:link class="btn btn-info" value="Ver mas!" outcome="/app/cliente/programas/prenatal/rutinas/rutinaspre-acondi.xhtml"></h:link></center>
+
+                                                </div>
+                                            </h:form>
+                                        </div>
+
+                                    </div> <!-- end back panel -->
+                                </div> <!-- end card -->
+                            </div> <!-- end card-container -->
+                        </div> <!-- end col-sm-3 -->
+
+                        <div class="col-md-4 col-sm-2">
+                            <div class="card-container">
+                                <div class="card">
+                                    <div class="front">
+                                        <div class="cover" style="height: 160px;">
+
+                                            <img src="#{request.contextPath}/resources/img/imghome/prenatal/spa.jpg"/>
+                                        </div>
+
+                                        <div class="content" style="padding: 0px 2px 0px;">
+                                            <div class="main">
+                                                <h3 class="name" style="font-size: 16px">Spa y Relajación</h3>
+                                                <p class="profession">Talleres</p>
+
+                                                <p class="text-center" style="text-align: justify;padding: 15px;">"Por que una madre merece lo mejor".<br/> Ven y relajate con nuestros cursos practicos</p>
+                                            </div>
+                                            <div class="footer">
+                                                <i class="fa fa-mail-forward"></i> Inscribete
+                                            </div>
+                                        </div>
+                                    </div> <!-- end front panel -->
+                                    <div class="back">
+                                        <div class="header " style="height: 70px;">
+                                            <h5 class="motto">"Maternity Manager"</h5>
+                                        </div>
+                                        <div class="content" style="padding: 0px 10px 20px">
+                                            <h:form>
+                                                <div class="main">
+                                                    <h4 class="text-center" style="margin: 0">Descripción</h4>
+                                                    <p class="text-center">Ralajate</p>
+                                                    <p class="profession">
+                                                        <ul style="padding: 0px 10px;">
+                                                            <li style="font-size: 13px;text-align: justify"><b>Masajes Prenatales:</b> Masajes relajantes y drenajes linfáticos.</li>
+                                                            <li style="font-size: 13px;text-align: justify"><b>Spa Prenatal:</b> Depilación completa especial para el parto, exfoliación corporal, hidratacion facial, chocolaterapia, masaje relajante, drenaje linfático, musicoterapia, aromaterapia, manicura y pedicura con productos naturales.</li>
+                                                        </ul>
+                                                    </p>
+
+
+                                                    <center><h:link class="btn btn-info" value="Ver mas!" outcome="/app/cliente/programas/prenatal/rutinas/rutinaspre-spa.xhtml"></h:link></center>
+
+                                                </div>
+                                            </h:form>
+                                        </div>
+
+                                    </div> <!-- end back panel -->
+                                </div> <!-- end card -->
+                            </div> <!-- end card-container -->
+                        </div> <!-- end col-sm-3 -->
+                    </div> <!-- end col-sm-10 -->
+                </b:row>
+
+
+
+
+            </div>
+        </div>
+
+
+
+    </ui:define>
+</ui:composition>
+

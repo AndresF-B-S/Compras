@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template/templateInterface.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:b="http://bootsfaces.net/ui"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="titulo">Administrador-Sesiones</ui:define>
+    
+
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="/app/index.html">Administrador</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">Listar Sesiones</span>
+            </li>
+        </ul>
+
+    </ui:define>
+
+    <ui:define name="contenido">
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="purple">
+                                <h4 class="title">Sesiones</h4>
+                                <p class="category">Lista de Sesiones</p>
+                            </div>
+                            <div class="card-content table-responsive">
+
+                                <b:messages globalOnly="true" class="animated flipInX"  showSummary="true" showDetail="true"/>
+                                <h:form id="form-data-table-sesiones" prependId="false">
+
+                                    <b:dataTable id="dtUsuario" value="#{listarSesionController.sesiones}" var="se" >
+
+
+                                        <b:dataTableColumn label="Id Sesion" value="#{se.idSesiones}"/>
+                                        <b:dataTableColumn label="Número de sesiones" value="#{se.numeroSesiones}"/>
+                                      
+
+                                        <b:dataTableColumn  label="#{mensajeApp.opciones}" >
+                                            <b:commandButton size="sm" look="success" value="" tooltip="Ver" iconAwesome="eye" action="#{verSesionController.verSesion(se)}"/>
+                                            <b:commandButton size="sm" look="primary" value="" tooltip="Modificar" iconAwesome="pencil" action="#{editarSesionController.preModificar(se)}"/>
+                                            <b:commandButton size="sm"  look="danger" value=""
+                                                             iconAwesome="trash" tooltip="Eliminar"
+                                                             onclick="$('.modalPseudoClass').modal();">
+                                                <f:ajax event="click" render=":message-modal-confirm"
+                                                        listener="#{listarSesionController.setSesionSeleccionado(se)}"/>
+                                            </b:commandButton>
+
+                                        </b:dataTableColumn>
+                                    </b:dataTable>
+
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <b:modal id="amodal" title="Modal Example" styleClass="modalPseudoClass">
+                        <h:panelGroup id="message-modal-confirm" layout="block">
+                            <p>¿Está seguro de eliminar las sesiones?
+                            </p>
+                        </h:panelGroup>
+                        <f:facet name="footer">
+                            <h:form id="form-eliminar" prependId="false">
+                                <b:button value="No estoy segura" dismiss="modal" />
+                                <b:commandButton value="Estoy totalmente segura" look="primary"
+                                                 actionListener="#{listarSesionController.eliminarInscripcion()}"/>
+                            </h:form>
+                        </f:facet>
+                    </b:modal>
+                </div>
+            </div>
+        </div>
+
+
+    </ui:define>
+</ui:composition>
+

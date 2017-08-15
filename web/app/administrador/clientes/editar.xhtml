@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template/templateInterface.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui">
+
+
+    <ui:define name="titulo">Administrador-Editar Cliente</ui:define>
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="index.xhtml">Administrador</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <a href="/app/administrador/clientes/cliente.xhtml">Editar Cliente</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">Cambiar datos</span>
+            </li>
+        </ul>
+
+    </ui:define>
+    <ui:define name="contenido">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="purple">
+                                <h4 class="title">Editar Cliente </h4>
+                                <p class="category">Aquí puedes modificar la información del cliente habilitado en el Maternity Club</p>
+                            </div>
+                            <div class="card-content">
+                                <b:messages showSummary="true"  class="animated flipInX" show-detail="true" />
+                                <b:form id="form-editar" prependId="false">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Id Personal Medico</label>
+                                                <b:inputText value="#{editarClienteController.clienteSelecionada.usuario.cedula}" class="form-control" disabled="true" />
+                                            </div>
+                                        </div>
+                                   
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Nombres</label>
+                                                <b:inputText value="#{editarClienteController.clienteSelecionada.usuario.nombres}"  class="form-control"/>
+                                            </div>
+                                        </div>
+                                        
+                                         <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Apellidos</label>
+                                                <b:inputText value="#{editarClienteController.clienteSelecionada.usuario.apellidos}"  class="form-control"/>
+                                            </div>
+                                        </div>
+                                        
+                                         <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Correo Electronico</label>
+                                                <b:inputText value="#{editarClienteController.clienteSelecionada.usuario.correoElectronico}"  class="form-control"/>
+                                            </div>
+                                        </div>
+                                        
+                                         <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Fecha de nacimiento</label>
+                                                <b:datepicker value="#{editarClienteController.clienteSelecionada.usuario.fechaNaci}"  class="form-control"/>
+                                            </div>
+                                        </div>
+                                        
+                                         <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Teléfono Celular</label>
+                                                <b:inputText value="#{editarClienteController.clienteSelecionada.usuario.telefonoCelular}" maxlength="10" class="form-control"/>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Teléfono Fijo</label>
+                                                <b:inputText value="#{editarClienteController.clienteSelecionada.usuario.telefonoFijo}" maxlength="7" class="form-control"/>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Clave</label>
+                                                <b:inputText value="#{editarClienteController.clienteSelecionada.usuario.clave}"  class="form-control"/>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Cargo</label>
+                                                <b:selectOneMenu value="#{editarClienteController.clienteSelecionada.idEmpresa}" class="form-control">
+                                                
+                                                    <f:selectItems value="#{listarEmpresaController.empresa}" var="p" itemLabel="#{p.idEmpresa} - #{p.nombre}"/>
+                                                </b:selectOneMenu>                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Clave</label>
+                                                <b:inputText value="#{editarClienteController.clienteSelecionada.estado}"  class="form-control" disabled="true"/>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        
+
+
+                                    <h:link styleClass="btn btn-primary" outcome="/app/administrador/clientes/cliente.xhtml" value="Volver"/>
+                                    <b:commandButton value="Guardar" icon="floppy-disk" actionListener="#{editarClienteController.actualizarDatos()}" class="btn btn-primary pull-right"/>
+
+                                    <div class="clearfix"></div>
+                                </b:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </ui:define>
+</ui:composition>
+

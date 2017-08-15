@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template/templateInterface.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:ps="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:b="http://bootsfaces.net/ui"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+  
+<ui:define name="titulo">Administrador-Ver Empresa</ui:define>
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="index.html">Administrador</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <a href="/app/administrador/empresa/empresa.xhtml">Empresa</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">Ver Empresa</span>
+            </li>
+        </ul>
+
+    </ui:define>
+
+
+
+
+    <ui:define name="contenido">
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="blue">
+                                <i class="material-icons">info_outline</i>
+                                <h4 class="title">Ver Empresa</h4>
+                                <p class="category">Aquí puedes ver la información de la empresa registrada en Maternity Club</p>
+                            </div>
+                            <div class="card-content">
+                                <b:messages showSummary="true" show-detail="true"/>
+                                <b:message for="form-editar" showSummary="true" show-detail="true"/>
+                                <h:form id="form-editar" prependId="false">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Nit de la empresa</label>
+                                                <h:outputText value="#{verEmpresaController.empresa.nit}" class="form-control"  />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Nombre de la empresa</label>
+                                                <h:outputText value="#{verEmpresaController.empresa.nombre}" class="form-control"  />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Telefono Celular</label>
+                                                <h:outputText value="#{verEmpresaController.empresa.telefonoC}" class="form-control"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Telefono Fijo</label>
+                                                <h:outputText value="#{verEmpresaController.empresa.telefonoF}" class="form-control"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Direccion sede alternativa</label>
+                                                <h:outputText value="#{verEmpresaController.empresa.direccionO}" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Direccion sede principal</label>
+                                                <h:outputText value="#{verEmpresaController.empresa.direccionP}" class="form-control"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Clientes Vinculados </label>
+                                                <b:dataTable border="false" info="false" paginated="false" searching="false" value="#{verEmpresaController.empresa.clientes}" var="cli">
+                                                    <b:dataTableColumn value="#{cli.usuario.cedula}"/>
+                                                </b:dataTable>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <h:link styleClass="btn btn-primary" outcome="/app/administrador/empresa/empresas.xhtml" value="Volver"/>
+
+                                </h:form>
+
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">local_offer</i> Maternity Club
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </ui:define>
+</ui:composition>
+

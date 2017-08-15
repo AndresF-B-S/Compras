@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="./../../WEB-INF/template/templateInterface.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="titulo">
+        #{sessionController.usuario.nombres} #{sessionController.usuario.apellidos}
+    </ui:define>
+    <ui:define name="pagetitle">
+        <div class="page-head">
+            <div class="page-title">
+                <h1> Aplazamientos </h1>
+            </div>
+        </div>
+    </ui:define>
+
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="index.html">Inicio</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">Registrar Aplazamiento</span>
+            </li>
+        </ul>
+
+    </ui:define>
+    <ui:define name="contenido">
+        <div class="col-sm-12">
+            <b:messages showDetail="true" showSummary="true" globalOnly="true"/>
+        </div>
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="purple">
+                                <h4 class="title">APLAZAMIENTOS</h4>
+                                <p class="category">Aquí puedes registrar las empresas</p>
+                            </div>
+                            <div class="card-content">
+                                <b:messages showSummary="true" show-detail="true" />
+                                <b:form id="form-editar" prependId="false">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Numero de Aplazamiento</label>
+                                                <b:inputText value="#{registrarEmpresasController.nuevoEmpresa.idEmpresa}" class="form-control"  />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Programa a Aplazar</label>
+                                                <b:inputText  value="#{registrarEmpresasController.nuevoEmpresa.nombre}"  class="form-control"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Dirección Principal(Sede Principal)</label>
+                                                <b:inputText  value="#{registrarEmpresasController.nuevoEmpresa.direccionP}"  class="form-control"/>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Dirección Alterna (Sede Alterna)</label>
+                                                <b:inputText  value="#{registrarEmpresasController.nuevoEmpresa.direccionO}"  class="form-control"/>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Teléfono Celular</label>
+                                                <b:inputText  value="#{registrarEmpresasController.nuevoEmpresa.telefonoC}"  class="form-control"/>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Teléfono Fijo</label>
+                                                <b:inputText  value="#{registrarEmpresasController.nuevoEmpresa.telefonoF}"  class="form-control"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h:link styleClass="btn btn-primary" outcome="/app/administrador/empresa/empresas.xhtml" value="Volver"/>
+                                    <b:commandButton value="Guardar" icon="floppy-disk" actionListener="#{registrarEmpresasController.registrar()}" class="btn btn-primary pull-right"/>
+
+                                    <div class="clearfix"></div>
+                                </b:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-12">
+            <div class="portlet light bordered">
+                <div class="portlet-title">
+                    <div class="caption font-dark">
+                        <i class="icon-settings font-dark"></i>
+                        <span class="caption-subject bold uppercase">Servicio que desea aplazar #{sessionController.usuario.nombres} #{sessionController.usuario.apellidos} </span>
+                    </div>
+                    <div class="tools"> </div>
+                </div>
+                <div class="portlet-body">
+                    <h:form>
+                        <b:panelGrid col-spans="2,8,2"   size="xs">
+                            <h:outputLabel value="Nombre" />
+                            <h:outputLabel value="Descripción" />
+                            <h:outputLabel value=" Fecha Inicio Programa" />
+                            <h:outputLabel value="#{registrarAplazamientoController.inscripcionSeleccionado.idPrograma.nombre}" />
+                            <h:outputLabel value=" #{registrarAplazamientoController.inscripcionSeleccionado.estado}" />
+                            <h:outputLabel value=" #{registrarAplazamientoController.inscripcionSeleccionado.fechaInicio}" />
+                        </b:panelGrid>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <div class="portlet light bordered">
+                <b:message for="form-registrarAplazamiento" showSummary="true" show-detail="true"/>
+                <b:form id="form-registrarAplazamiento" rendered="#{registrarAplazamientoController.existeInscripcionSeleccionado()}">
+                    <b:formGroup>
+                        <b:inputTextarea label="Motivo del Aplazamiento" placeholder="Ingrese la razon por la cual realiza el aplazamiento de su servicio"
+                                         value="#{registrarAplazamientoController.motivo}">
+                        </b:inputTextarea>
+                        <br/>
+                    </b:formGroup>
+                    <br/>
+                    <br/>
+                    <b:datepicker value="#{registrarAplazamientoController.fechaHora}"
+                                  />
+                    <br/>
+                    <br/>
+                    <b:commandButton  value="Enviar" type="submit" look="primary" action="#{registrarAplazamientoController.registrar()}"/>
+                </b:form>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="portlet light bordered">
+                <div class="portlet-title">
+                    <div class="caption font-dark">
+                        <i class="icon-settings font-dark"></i>
+                        <span class="caption-subject bold uppercase">Lista de Servicios #{sessionController.usuario.nombres} #{sessionController.usuario.apellidos} </span>
+                    </div>
+                    <div class="tools"> </div>
+                </div>
+                <div class="portlet-body">
+                    <b:message for="form-data-table-servicios" showSummary="true" showDetail="true"/>
+                    <h:form id="form-data-table-servicios" prependId="false">
+                        <b:dataTable id="dtServicio" var="programa" value="#{listarProgramasController.programas}" >
+
+
+                            <b:dataTableColumn label="idServicio"  rendered="false" value="#{programa.idPrograma}"/>
+                            <b:dataTableColumn label="Nombre" value="
+                                               #{programa.nombre}"/>
+
+                            <b:dataTableColumn label="Descripción" >
+                                #{programa.idRutinas.nombre}
+                            </b:dataTableColumn>
+                            <b:dataTableColumn label="Fecha Inicio Servicio" value="
+
+                                               #{programa.fechaRegistro}"/>
+                            <b:dataTableColumn  label="Opciones">
+                                <b:commandButton look="primary" value="" iconAwesome="clock-o" action="#{registrarAplazamientoController.preModificar(servicio)}"/>
+                            </b:dataTableColumn>
+                        </b:dataTable>
+
+                    </h:form>
+                </div>
+            </div>
+        </div>
+    </ui:define>
+
+</ui:composition>

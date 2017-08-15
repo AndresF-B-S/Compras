@@ -1,0 +1,4 @@
+id;nombre;descripcion
+1;Administrador;Este rol tiene permisos y privilegios sobre la mayoria del sistema
+2;Personal Medico;Este rol tiene permisos especificos para el correcto uso de la atencion al cliente
+3;Clientes;Este rol tiene persmisos de cliente y por lo tanto no podra tener un amplico contro cobre el sistema

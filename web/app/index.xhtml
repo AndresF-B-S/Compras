@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition  template="/WEB-INF/template/templateInterface.xhtml"
+                  xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:b="http://bootsfaces.net/ui"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+
+
+    <ui:define name="contenido">
+        
+        
+        <div style="margin: 60px;">
+               
+    <b:carousel id="tiovivo" style="width:1000px; border-radius: 90px;" interval="5500">
+  
+        <b:carouselItem caption=" &bull; &hearts; Bienvenida a   Maternity Club &copy; Gym &amp; Spa. &hearts; &bull; #{sessionController.usuario.nombres} #{sessionController.usuario.apellidos} ¡Empecemos! "  >
+       <img src="#{request.contextPath}/resources/img/io.png" alt="Valladolid" style="width: 1000px; height: 320px;" />
+   </b:carouselItem>
+     
+   
+        
+   <b:carouselItem caption="Etapas que cambian nuestra vida y traen felicidad. Maternity Club te acompaña en cada una">
+     <img src="#{request.contextPath}/resources/img/imghome/programas/prenatal-reco.jpg" alt="Valladolid" style="width: 1000px; height: 320px;" />
+   </b:carouselItem>
+        
+           <b:carouselItem >
+     <img src="#{request.contextPath}/resources/img/imghome/galeria/maternity-taller-para-padres-min.png" alt="Valladolid" style="width: 1000px; height: 320px;" />
+   </b:carouselItem>
+   
+   <b:carouselItem >
+     <img src="#{request.contextPath}/resources/img/imghome/galeria/maternity-baby-rumba.png" alt="Valladolid" style="width: 1000px; height: 320px; " />
+   </b:carouselItem>
+        <b:carouselItem caption="&hearts; ¡Ven! y tomate un descanso. Relajate en nuestro Spa &hearts; ">
+     <img src="#{request.contextPath}/resources/img/imghome/programas/spa-reco.jpg" alt="Valladolid" style="width: 1000px; height: 320px; " />
+   </b:carouselItem>
+ </b:carousel>
+            <div class="row" style="margin-top: 10px; margin-left: 2px;">
+                
+                <b:carousel id="tioviva" style="width:1000px; border-radius: 90px;" interval="5500" >
+  
+   <b:carouselItem  >
+     <img src="#{request.contextPath}/resources/img/banners/landing-page-instalaciones.jpg" alt="Valladolid" style="width: 1000px; height: 200px; " />
+   </b:carouselItem>
+        <b:carouselItem >
+     <img src="#{request.contextPath}/resources/img/banners/header-posparto.jpg" alt="Valladolid" style="width: 1000px; height: 200px;" />
+   </b:carouselItem>
+   <b:carouselItem >
+     <img src="#{request.contextPath}/resources/img/banners/header-prenatal.jpg" alt="Valladolid" style="width: 1000px; height: 200px;" />
+   </b:carouselItem>
+   
+   <b:carouselItem >
+     <img src="#{request.contextPath}/resources/img/banners/header-club-del-bebe.jpg" alt="Valladolid" style="width: 1000px; height: 200px; " />
+   </b:carouselItem>
+ </b:carousel>
+            </div>
+         
+            
+             </div>   
+                   
+    </ui:define>
+</ui:composition>
+
+

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition template="/WEB-INF/template/templateInterfaz.xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:b="http://bootsfaces.net/ui"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <ui:define name="titulo">#{sessionController.usuario.nombres}</ui:define>
+    <ui:define name="pagetitle">
+        <div class="page-head">
+            <div class="page-title">
+                <h1> ponganme nombre
+                    <small>ponganme nombre</small>
+                </h1>
+            </div>
+        </div>
+    </ui:define>
+
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="index.html">ponganme nombre</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">ponganme nombre</span>
+            </li>
+        </ul>
+
+    </ui:define>
+
+    <ui:define name="contenido">
+
+
+        <b:messages show-detail="true" show-summary="true" globalOnly="true"/>
+
+        <div class="col-sm-12">
+            <section class="panel">
+                <header>
+                    Usuarios del sistema
+                </header>
+                <b:message for="form-data-table-usuarios" show-summary="true" showDetail="true"/>
+                <b:form id="form-data-table-usuarios" prependId="false">
+                    <b:dataTable value="#{listarClientesController.clientes}" var="cliente">
+                        <b:dataTableColumn label="cedula" value="#{cliente.usuario.cedula}" />
+                        <b:dataTableColumn label="nombres" value="#{cliente.usuario.nombre}" />
+                        <b:dataTableColumn label="apellidos" value="#{cliente.usuario.apellidos}" />
+                        <b:dataTableColumn label="roles" >
+                            <ui:repeat value="#{cliente.usuario.roles}"  var="roles">
+                                <h:outputText value="#{roles.nombre}"/><br/>
+                            </ui:repeat>
+                        </b:dataTableColumn>
+                        <b:dataTableColumn label="Opciones">
+                            <b:commandButton look="success" value="" icon-awesome="eye" />
+                            <b:commandButton look="primary" value="" icon-awesome="pencil" />
+                            <b:commandButton look="danger" value=""
+                                             iconAwesome="trash" tooltip="Eliminar"
+                                             onclick="$('.modalPseudoClass').modal();">
+                                <!--                                <f:ajax event="click" render=":message-modal-confim"
+                                                                        listener=""/>-->
+                            </b:commandButton>
+                            <b:commandButton look="default" value="" iconAwesome="" />
+                        </b:dataTableColumn>
+
+                    </b:dataTable>
+                </b:form>
+
+            </section>
+        </div>
+
+
+
+
+    </ui:define>
+</ui:composition> 
+
+

@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template/templateInterface.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui">
+
+  <ui:define name="titulo">Administrador-Editar Usuarios</ui:define>
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="#{request.contextPath}/app/index.xhtml">Administrador</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <a href="#{request.contextPath}/app/usuarios/listar.xhtml">Usuarios</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">Cambiar Datos</span>
+
+            </li>
+        </ul>
+
+    </ui:define>
+    <ui:define name="contenido">
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header" data-background-color="purple">
+                                <h4 class="title">Editar Usuario</h4>
+                                <p class="category">Aquí puedes editar la información del usuario que haz seleccionado</p>
+                            </div>
+                            <div class="card-content">
+                                <b:messages showSummary="true" show-detail="true"/>
+                                <b:message for="form-editar" showSummary="true" show-detail="true"/>
+                                <b:form id="form-editar" prependId="false">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Numero de Documento</label>
+                                                <b:inputText value="#{editarUsuarioController.usuarioSelecionado.cedula}" class="form-control" disabled="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Rol</label>
+                                                <h:selectOneMenu value="#{editarUsuarioController.usuarioSelecionado.roles}" converter="rolConverter" class="form-control">
+                                                    <f:selectItems value="#{rolContoller.roles}"  var="r" itemLabel="#{r.nombre}" />
+                                                </h:selectOneMenu>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Clave</label>
+                                                <b:inputText value="#{editarUsuarioController.usuarioSelecionado.clave}" class="form-control"/>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Nombres</label>
+                                                <b:inputText value="#{editarUsuarioController.usuarioSelecionado.nombres}" class="form-control"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Apellidos</label>
+                                                <b:inputText value="#{editarUsuarioController.usuarioSelecionado.apellidos}" class="form-control"/>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Correo Electronico</label>
+                                                <b:inputText value="#{editarUsuarioController.usuarioSelecionado.correoElectronico}" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Fecha Nacimiento</label>
+                                                <b:datepicker  value="#{editarUsuarioController.usuarioSelecionado.fechaNaci}" class="form-control" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <h:link styleClass="btn btn-primary" outcome="/app/usuarios/listar.xhtml" value="Volver"/>
+                                    <b:commandButton value="Guardar" icon="floppy-disk" actionListener="#{editarUsuarioController.actualizarDatos()}" class="btn btn-primary pull-right"/>
+                                    <div class="clearfix"></div>
+                                </b:form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card card-profile">
+                            <div class="card-avatar">
+                                <a href="#pablo">
+                                    <img class="img" src="../assets/img/faces/marc.jpg" />
+                                </a>
+                            </div>
+
+                            <div class="content">
+                                <h6 class="category text-gray">CEO / Co-Founder</h6>
+                                <h4 class="card-title">#{editarUsuarioController.usuarioSelecionado.nombres} #{editarUsuarioController.usuarioSelecionado.apellidos}</h4>
+                                <p class="card-content">
+                                    Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                                </p>
+                                <a href="#pablo" class="btn btn-primary btn-round">Follow</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </ui:define>
+</ui:composition>
+

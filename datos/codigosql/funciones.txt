@@ -1,0 +1,6 @@
+DROP FUNCTION `fc_encriptar`; CREATE DEFINER=`root`@`localhost` FUNCTION `fc_encriptar`(`clave` VARCHAR(35) CHARSET utf8) RETURNS varchar(35) CHARSET utf8
+BEGIN
+DECLARE var VARCHAR(35);
+SET var = (SELECT MD5(clave));
+return var;
+END

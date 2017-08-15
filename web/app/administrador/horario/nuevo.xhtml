@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template/templateInterface.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:b="http://bootsfaces.net/ui"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<ui:define name="titulo">Administrador-Nuevo Horario</ui:define>
+
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="/app/administrador/horario/horario.xhtml">Horario</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">Nuevo Horario</span>
+            </li>
+        </ul>
+    </ui:define>
+
+    <ui:define name="contenido">
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="purple">
+                                <h4 class="title">Nuevo Horario</h4>
+                                <p class="category">Puedes agregar un horario que estará disponible para los programas del gimnasio</p>
+                            </div>
+                            <div class="card-content">
+                                <b:messages class="animated flipInX" globalOnly="true" showSummary="true" show-detail="true"/>
+                                
+                                <b:form id="form-registro" prependId="false">
+                                   <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Fecha de inicio</label>
+                                                <b:dateTimePicker  value="#{registroHorarioController.horarioNuevo.fechaInicio}" class="form-control"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Fecha fin</label>
+                                                <b:dateTimePicker  value="#{registroHorarioController.horarioNuevo.fechaFin}" class="form-control"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Servicios</label>
+                                                <b:selectOneMenu value="#{registroHorarioController.horarioNuevo.idCursos}">
+                                                    <f:selectItems value="#{listarCursosController.cursos}" var="c" itemLabel="Nombre: #{c.idServicios.nombre}"/> 
+                                                    
+                                                                                                      
+                                                </b:selectOneMenu>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <h:link styleClass="btn btn-primary" outcome="/app/administrador/horario/horario.xhtml" value="#{mensajeApp.back}"/>
+                                    <b:commandButton value="#{mensajeApp.save}" icon="floppy-disk" actionListener="#{registroHorarioController.registrar()}" class="btn btn-primary pull-right"/>
+
+
+                                    <div class="clearfix"></div>
+                                </b:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ui:define>
+</ui:composition>
+

@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template/templateInterface.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:v="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui">
+
+    
+<ui:define name="titulo">Administrador-Editar Empresa</ui:define>
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="index.html">Administrador</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <a href="/app/administrador/empresa/empresa.xhtml">Empresa</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">Registrar Empresa</span>
+            </li>
+        </ul>
+        
+
+    </ui:define>
+    <ui:define name="contenido">
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="purple">
+                                <h4 class="title">Registrar Empresa</h4>
+                                <p class="category">Aquí puedes registrar las empresas vinculadas con Maternity Club</p>
+                            </div>
+                            <div class="card-content">
+                                <b:messages class="animated flipInX"  showSummary="true" show-detail="true" />
+                                <b:form id="form-editar" prependId="false">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Nit de la empresa</label>
+                                                <b:inputText value="#{registrarEmpresasController.nuevoEmpresa.nit}" class="form-control"  />
+                                            </div>
+                                        </div>
+                                   
+                                        <div class="col-md-4">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Nombre de la empresa</label>
+                                                <b:inputText  value="#{registrarEmpresasController.nuevoEmpresa.nombre}"  class="form-control"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Dirección Principal(Sede Principal)</label>
+                                                <b:inputText  value="#{registrarEmpresasController.nuevoEmpresa.direccionP}"  class="form-control"/>
+
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="col-md-4">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Dirección Alterna (Sede Alterna)</label>
+                                                <b:inputText  value="#{registrarEmpresasController.nuevoEmpresa.direccionO}"  class="form-control"/>
+
+                                            </div>
+                                        </div>
+                                   
+                                        <div class="col-md-4">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Teléfono Celular</label>
+                                                <b:inputText maxlength="20"  value="#{registrarEmpresasController.nuevoEmpresa.telefonoC}"  class="form-control"/>
+
+                                            </div>
+                                        </div>
+                                   
+                                        <div class="col-md-4">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Teléfono Fijo</label>
+                                                <b:inputText maxlength="20" value="#{registrarEmpresasController.nuevoEmpresa.telefonoF}"  class="form-control"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h:link styleClass="btn btn-primary" outcome="/app/administrador/empresa/empresas.xhtml" value="Volver"/>
+                                    <b:commandButton value="Guardar" icon="floppy-disk" actionListener="#{registrarEmpresasController.registrar()}" class="btn btn-primary pull-right"/>
+
+                                    <div class="clearfix"></div>
+                                </b:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </ui:define>
+</ui:composition>
+

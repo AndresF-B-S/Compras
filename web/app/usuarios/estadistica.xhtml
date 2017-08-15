@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template/templateInterfaz.xhtml"
+
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui"
+                xmlns:hf="http://highfaces.org">
+
+    <ui:define name="titulo">#{sessionController.usuario.primerNombre}</ui:define>
+    <ui:define name="pagetitle">
+        <div class="page-head">
+            <div class="page-title">
+                <h1> Usuarios
+                    <small>Lista de usuarios</small>
+                </h1>
+            </div>
+        </div>
+    </ui:define>
+
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="index.html">Home</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">Listar</span>
+            </li>
+        </ul>
+
+    </ui:define>
+
+    <ui:define name="contenido">
+        <div class="col-sm-12">
+            <b:messages showDetail="true" showSummary="true" globalOnly="true"/>
+        </div>
+        
+       
+
+        <hf:chart type="line" value="# {lineChartBean.simpleList}" var="point"
+     point="# {point}" title="List of Integer values" xaxisLabel="Index" yaxisLabel="Amount"/>
+    </ui:define>
+
+</ui:composition>
+

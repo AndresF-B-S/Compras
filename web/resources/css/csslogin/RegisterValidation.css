@@ -1,0 +1,11 @@
+/*#RegisterUsuario .has-error .control-label,
+#RegisterUsuario .has-error .help-block,
+#RegisterUsuario .has-error .form-control-feedback {
+    color: #fff;
+}
+
+#RegisterUsuario .has-success .control-label,
+#RegisterUsuario .has-success .help-block,
+#RegisterUsuario .has-success .form-control-feedback {
+    color: #fff;
+}*/

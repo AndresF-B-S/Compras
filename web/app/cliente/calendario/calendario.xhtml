@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template/templateInterface.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:v="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui"
+                xmlns:p="http://primefaces.org/ui">
+
+
+    <ui:define name="titulo">Administrador-Registrar Dato Clinico</ui:define>
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="index.html">Administrador</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <a href="/app/administrador/datos/ver.xhtml">Datos Clinicos</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">Registrar Dato Clinico</span>
+            </li>
+        </ul>
+
+
+    </ui:define>
+    <ui:define name="contenido">
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="purple">
+                                <h4 class="title">MI CALENDARIO</h4>
+                                <p class="category">Puedo ver mis proximas citas</p>
+                            </div>
+                            <div class="card-content">
+                                <div class="col-sm-12 col-sm-offset-2"><br/><br/>
+                                    <b:form>
+                                        <p:growl id="messages" showDetail="true" />
+
+                                        <h:panelGrid columnClasses="value">
+
+                                            <p:schedule id="schedule" value="#{scheduleView.eventModel}" widgetVar="myschedule" timeZone="GMT+2">
+
+                                                <p:ajax event="dateSelect" listener="#{scheduleView.onDateSelect}" update="eventDetails" oncomplete="PF('eventDialog').show();" />
+                                                <p:ajax event="eventSelect" listener="#{scheduleView.onEventSelect}" update="eventDetails" oncomplete="PF('eventDialog').show();" />
+                                                <p:ajax event="eventMove" listener="#{scheduleView.onEventMove}" update="messages" />
+                                                <p:ajax event="eventResize" listener="#{scheduleView.onEventResize}" update="messages" />
+
+                                            </p:schedule>
+
+
+                                        </h:panelGrid>
+
+                                        <p:dialog widgetVar="eventDialog" header="Event Details" showEffect="clip" hideEffect="clip">
+                                            <h:panelGrid id="eventDetails" columns="2">
+                                                <p:outputLabel for="title" value="Titles:" />
+                                                <p:inputText id="title" value="#{scheduleView.event.title}" required="true" />
+
+                                                <p:outputLabel for="from" value="From:" />
+                                                <p:calendar id="from" value="#{scheduleView.event.startDate}" timeZone="GMT+2" pattern="dd/MM/yyyy HH:mm"/>
+
+                                                <p:outputLabel for="to" value="To:" />
+                                                <p:calendar id="to" value="#{scheduleView.event.endDate}" timeZone="GMT+2" pattern="dd/MM/yyyy HH:mm"/>
+
+                                                <p:outputLabel for="allDay" value="All Day:" />
+                                                <h:selectBooleanCheckbox id="allDay" value="#{scheduleView.event.allDay}" />
+
+                                                <p:commandButton type="reset" value="Reset" />
+                                                <p:commandButton id="addButton" value="Save" actionListener="#{scheduleView.addEvent}" oncomplete="PF('myschedule').update();PF('eventDialog').hide();" />
+                                            </h:panelGrid>
+                                        </p:dialog>
+                                    </b:form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            PrimeFaces.locales['tr'] = {
+                closeText: 'kapat',
+                prevText: 'geri',
+                nextText: 'ileri',
+                currentText: 'bugün',
+                monthNames: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
+                    'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'],
+                monthNamesShort: ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz',
+                    'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'],
+                dayNames: ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'],
+                dayNamesShort: ['Pz', 'Pt', 'Sa', 'Ça', 'Pe', 'Cu', 'Ct'],
+                dayNamesMin: ['Pz', 'Pt', 'Sa', 'Ça', 'Pe', 'Cu', 'Ct'],
+                weekHeader: 'Hf',
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: '',
+                month: 'Ay',
+                week: 'Hafta',
+                day: 'Gün',
+                allDayText: 'Tüm Gün'
+            };
+        </script>
+        <style type="text/css">
+            .value {
+                width: 600px;
+                text-align: center;
+            }
+        </style>
+
+    </ui:define>
+</ui:composition>
+

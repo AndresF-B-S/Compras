@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="./../../WEB-INF/template/templateInterface.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="titulo">
+        #{sessionController.usuario.nombres} #{sessionController.usuario.apellidos}
+    </ui:define>
+    <ui:define name="pagetitle">
+        <div class="page-head">
+            <div class="page-title">
+                <h1> Aplazamientos </h1>
+            </div>
+        </div>
+    </ui:define>
+
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="index.html">Inicio</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">Registrar Aplazamiento</span>
+            </li>
+        </ul>
+
+    </ui:define>
+    <ui:define name="contenido">
+       
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="purple">
+                                <h4 class="title">Registrar Aplazamiento</h4>
+                                <p class="category">Aquí puedes aplzar los servicio de Maternity Club</p>
+                            </div>
+                            <div class="card-content">
+                                <b:message for="form-registrarAplazamiento" showSummary="true" show-detail="true"/>
+                                <b:form id="form-registrarAplazamiento" rendered="#{registrarAplazamientoController.existeInscripcionSeleccionado()}">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Fecha Inicio</label>
+                                                <b:inputText value="#{registrarAplazamientoController.nuevoAplazamiento.motivo}" class="form-control"></b:inputText>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Fecha Inicio</label>
+                                                <b:datepicker value="#{registrarAplazamientoController.nuevoAplazamiento.inicio}" class="form-control"></b:datepicker>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Fecha Fin</label>
+                                                <b:datepicker value="#{registrarAplazamientoController.nuevoAplazamiento.fin}" class="form-control"></b:datepicker>
+                                            </div>
+                                        </div>
+                                         <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Inscripción para aplazar</label>
+                                                <b:selectOneMenu value="#{registrarAplazamientoController.inscripcionSeleccionado}" class="form-control">
+
+                                                    <f:selectItems value="#{registrarAplazamientoController.inscripcionesCliente}" var="i" itemLabel=" # De inscripción: #{i.idInscripcion}- Estado: #{i.estado}"/>
+                                                </b:selectOneMenu>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Motivo del Aplazamiento</label>
+                                                <b:inputTextarea  placeholder="Ingrese la razon por la cual realiza el aplazamiento de su servicio" value="#{registrarAplazamientoController.motivo}"></b:inputTextarea>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <b:commandButton value="Guardar" icon="floppy-disk" actionListener="#{registrarAplazamientoController.registrar()}" class="btn btn-primary pull-right"/>
+
+                                    <div class="clearfix"></div>
+                                </b:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="purple">
+                                <h4 class="title">Inscripciones</h4>
+                                <p class="category">Lista de Inscripciones</p>
+                            </div>
+                            <div class="card-content table-responsive">
+
+                                <b:messages globalOnly="true" class="animated flipInX"  showSummary="true" showDetail="true"/>
+                                <h:form id="form-data-table-usuarios" prependId="false">
+
+                                    <b:dataTable id="dtUsuario" value="#{listarInscripcionController.inscripciones}" var="in" >
+
+
+                                        <b:dataTableColumn label="Id Inscripcion" value="#{in.idInscripciones}"/>
+                                        <b:dataTableColumn label="Cedula Cliente" value="#{in.idCliente.usuario.cedula}"/>
+                                        <b:dataTableColumn label="Nombre Cliente" value="#{in.idCliente.usuario.nombres} #{in.idCliente.usuario.apellidos} "/>
+                                        <b:dataTableColumn label="Estado" value="#{in.estado}"/>
+                                        <b:dataTableColumn label="Fecha de Inicio">
+                                            <h:outputText value="#{in.fechaInicio}">
+                                                <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                            </h:outputText>
+                                        </b:dataTableColumn>
+                                        <b:dataTableColumn label="Valor de la inscripción">
+                                            <h:outputText value="#{in.valor}">
+                                                <f:convertNumber  currencySymbol="$" groupingUsed="true"
+                                                                  maxFractionDigits="0" type="currency" locale="es_CO" />
+                                            </h:outputText>
+                                        </b:dataTableColumn>
+                                        <b:dataTableColumn label="# de sesiones" value="#{in.idSesiones.numeroSesiones}" />
+
+
+
+                                        <b:dataTableColumn  label="#{mensajeApp.opciones}" >
+                                            <b:commandButton size="sm" look="success" value="" tooltip="Ver" iconAwesome="eye" action="#{verInscripcionController.verInscripcion(in)}"/>
+                                            <b:commandButton size="sm" look="primary" value="" tooltip="Modificar" iconAwesome="pencil" action="#{editarInscripcionController.preModificar(in)}"/>
+                                            <b:commandButton size="sm"  look="danger" value=""
+                                                             iconAwesome="trash" tooltip="Eliminar"
+                                                             onclick="$('.modalPseudoClass').modal();">
+                                                <f:ajax event="click" render=":message-modal-confirm"
+                                                        listener="#{listarInscripcionController.setInscripcionSeleccionado(in)}"/>
+                                            </b:commandButton>
+                                            <b:commandButton size="sm" look="default" value="" tooltip="Activar/Desactivar" iconAwesome="#{editarInscripcionController.getIconUsuarioBloqueo(in)}" action="#{editarInscripcionController.cambioDeEstado(in)}"/>
+
+                                        </b:dataTableColumn>
+                                    </b:dataTable>
+
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <b:modal id="amodal" title="Modal Example" styleClass="modalPseudoClass">
+                        <h:panelGroup id="message-modal-confirm" layout="block">
+                            <p>¿Está seguro de eliminar la inscripción del cliente #{listarInscripcionController.inscripcionSeleccionado.idCliente.usuario.nombres} #{listarInscripcionController.inscripcionSeleccionado.idCliente.usuario.apellidos} ?
+                            </p>
+                        </h:panelGroup>
+                        <f:facet name="footer">
+                            <h:form id="form-eliminar" prependId="false">
+                                <b:button value="No estoy segura" dismiss="modal" />
+                                <b:commandButton value="Estoy totalmente segura" look="primary"
+                                                 actionListener="#{listarInscripcionController.eliminarInscripcion()}"/>
+                            </h:form>
+                        </f:facet>
+                    </b:modal>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="purple">
+                                <h4 class="title">Lista de Servicios #{sessionController.usuario.nombres} #{sessionController.usuario.apellidos}</h4>
+
+                            </div>
+                            <div class="card-content table-responsive">
+
+                                <b:messages globalOnly="true" class="animated flipInX"  showSummary="true" showDetail="true"/>
+                                <h:form id="form-data-table-servicios" prependId="false">
+                                    <b:dataTable id="dtServicio" var="programa" value="#{listarProgramasController.programas}" >
+
+
+                                        <b:dataTableColumn label="Id Servicio" value="#{programa.idPrograma}"/>
+                                        <b:dataTableColumn label="Nombre" value="#{programa.nombre}"/>
+                                        <b:dataTableColumn label="Descripcion" value="#{programa.idRutinas.nombre} "/>
+                                        <b:dataTableColumn label="Fecha de Inicio" value="  #{programa.fechaRegistro}"/>
+
+                                        <b:dataTableColumn  label="#{mensajeApp.opciones}" >
+
+                                            <b:commandButton value="Guardar" icon="floppy-disk" actionListener="#{registrarAplazamientoController.preModificar(servicio)}" class="btn btn-primary pull-right"/>
+
+                                        </b:dataTableColumn>
+                                    </b:dataTable>
+
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ui:define>
+
+</ui:composition>

@@ -1,0 +1,289 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/template/templateInterface.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:v="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:b="http://bootsfaces.net/ui">
+
+
+    <ui:define name="breadcrumb">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <a href="index.xhtml">Administrador</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <a href="inscripciones.xhtml">Inscripciones</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span class="active">Registrar Inscripciones</span>
+            </li>
+        </ul>
+
+    </ui:define>
+    <ui:define name="contenido">
+        <div class="content">
+            <div class="container-fluid">
+
+                <div class="container">
+                    <div class="jumbotron jumbo">
+                        <h1>Programas de promoción y prevención</h1>
+                    </div>
+                </div>
+
+
+                <br/><br/>
+                <div class="jumbo">
+                    <p class="text-center" style="font-size: 20px;">La atención postnatal es la parte del proceso destinado a fomentar la salud de la madre y el niño en conjunto con su grupo familiar. El control durante esta etapa va dirigido no solo a la mujer sino a ambos padres a fin de cuidar su propia salud y aportar los conocimientos en cuento a los cuidados y necesidades del niño recién nacido</p>
+                    <p><h:link class="btn btn-white btn-md" value="Inscribirme!" style="color: #9C27B0;font-weight: 800;"></h:link></p>
+                </div>
+
+
+                <b:row>
+                    <div class="col-md-12">
+
+                        <div class="col-md-4">
+
+                            <div class="row form-group">
+                                <div class="panel panel-default">
+                                    <div class="panel-image">
+                                        <img src="#{request.contextPath}/resources/img/cita.jpg" class="panel-image-preview" />
+                                        <label for="toggle-4"></label>
+                                    </div>
+                                    <input type="checkbox" id="toggle-4" checked="" class="panel-image-toggle"/>
+                                    <div class="panel-body">
+                                        <h4>CONSULTA DE PRIMER VEZ POR MEDICO GENERAL </h4>
+                                        <p style="text-align: justify">Esta tiene como objetivo principal, hacer una completa evaluación del estado de la salud y los factores de riesgo de la gestante y determinar el plan de controles posteriores</p>
+                                    </div>
+                                    <div class="panel-footer text-center">
+                                        <a href="#download"><span class="glyphicon glyphicon-download"></span></a>
+                                        <a href="#facebook"><span class="fa fa-facebook"></span></a>
+                                        <a href="#twitter"><span class="fa fa-twitter"></span></a>
+                                        <a href="#share"><span class="glyphicon glyphicon-share-alt"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+
+                            <div class="row form-group">
+                                <div class="panel panel-default">
+
+
+                                    <div class="panel-body">
+                                        <h4>OBJETIVOS</h4>
+                                        <p style="text-align: justify">
+                                            <ul>
+                                                <li>Diagnosticar la condición del recién nacido.</li>
+                                                <li>Promover en la madre hábitos de vida saludable, factores protectores al recién nacido.</li>
+                                                <li> Informar a la mujer, familia y comunidad sobre los aspectos preventivos (vacunación, lactancia materna), y curativas relacionadas con la salud del recién nacido.</li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                    <div class="panel-footer text-center">
+                                        <a href="#download"><span class="glyphicon glyphicon-download"></span></a>
+                                        <a href="#facebook"><span class="fa fa-facebook"></span></a>
+                                        <a href="#twitter"><span class="fa fa-twitter"></span></a>
+                                        <a href="#share"><span class="glyphicon glyphicon-share-alt"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="panel panel-default">
+
+                                    <div class="panel-body">
+                                        <h4>ELABORACIÓN DE LA HISTORIA CLÍNICA</h4>
+                                        <p style="text-align: justify">Se hace una identificación completa de la paciente, una anamnesis amplia de los antecedentes médicos, quirúrgicos, ginecológicos y obstétricos, familiares y sicosociales</p>
+                                    </div>
+                                    <div class="panel-footer text-center">
+                                        <a href="#download"><span class="glyphicon glyphicon-download"></span></a>
+                                        <a href="#facebook"><span class="fa fa-facebook"></span></a>
+                                        <a href="#twitter"><span class="fa fa-twitter"></span></a>
+                                        <a href="#share"><span class="glyphicon glyphicon-share-alt"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </b:row>
+
+                <br/>
+                <div><p class="text-center" style="font-size: 30px;">OTROS PROGRAMAS PRENTALES</p></div>
+                <br/><br/>
+                <b:row>
+
+                    <div class="col-md-12">
+
+
+                        <div class="col-md-4 col-sm-2">
+                            <div class="card-container">
+                                <div class="card">
+                                    <div class="front">
+                                        <div class="cover" style="height: 160px;">
+
+                                            <img src="#{request.contextPath}/resources/img/imghome/posnatal/acondicionamiento-fisico.jpg" class="img-responsive img-thumbnail" />
+                                        </div>
+
+                                        <div class="content">
+                                            <div class="main">
+                                                <h3 class="name" style="font-size: 16px">Acondicionamiento Físico</h3>
+                                                <p class="profession">Talleres</p>
+
+                                                <p class="text-center">Clases posparto</p>
+                                            </div>
+                                            <div class="footer">
+                                                <i class="fa fa-mail-forward"></i> Inscribete
+                                            </div>
+                                        </div>
+                                    </div> <!-- end front panel -->
+                                    <div class="back">
+                                        <div class="header">
+                                            <h5 class="motto">"Maternity Manager"</h5>
+                                        </div>
+                                        <div class="content">
+                                            <h:form>
+                                                <div class="main">
+                                                    <h4 class="text-center">Descripción</h4>
+                                                    <p class="text-center">Ralajate</p>
+                                                    <p class="profession">
+                                                        <ul>
+                                                            <li>YOGA POSPARTO.</li>
+                                                            <li>PILATES POSPARTO.</li>
+                                                            <li>TONO.</li>
+                                                            <li>ACONDICIONAMIENTO FISICO</li>
+                                                        </ul>
+                                                    </p>
+
+
+                                                    <center><h:link class="btn btn-info" value="Inscribirme!"></h:link></center>
+
+                                                </div>
+                                            </h:form>
+                                        </div>
+
+                                    </div> <!-- end back panel -->
+                                </div> <!-- end card -->
+                            </div> <!-- end card-container -->
+                        </div> <!-- end col-sm-3 -->
+
+                        <div class="col-md-4 col-sm-2">
+                            <div class="card-container">
+                                <div class="card">
+                                    <div class="front">
+                                        <div class="cover" style="height: 160px;">
+
+                                            <img src="#{request.contextPath}/resources/img/imghome/posnatal/area-medica.jpg"/>
+                                        </div>
+
+                                        <div class="content">
+                                            <div class="main">
+                                                <h3 class="name" style="font-size: 16px">Área Especializada</h3>
+                                                <p class="profession">Curso</p>
+
+                                                <p class="text-center" style="text-align: justify">Curso grupal o personalizado: <b>Preparación</b> para el <b>parto</b> y la <b>maternidad</b>.</p>
+                                            </div>
+                                            <div class="footer">
+                                                <i class="fa fa-mail-forward"></i> Inscribete
+                                            </div>
+                                        </div>
+                                    </div> <!-- end front panel -->
+                                    <div class="back">
+                                        <div class="header" style="height: 50px;">
+                                            <h5 class="motto">"Maternity Manager"</h5>
+                                        </div>
+                                        <div class="content" style="padding: 0px 10px 0px;">
+                                            <h:form>
+                                                <div class="main">
+                                                    <h4 class="text-center">Descripción</h4>
+                                                    <p class="text-center">Enterate</p>
+                                                    <p class="profession" style="text-align: justify">
+                                                        <ul style="padding: 0px 20px;">
+                                                            <li style="text-align: justify">Manejo de la incontinencia urinaria por medio de Electroestimulación y biofeedback perineal.</li>
+                                                            <li style="text-align: justify"><b>Drenaje mamario</b>: Masajes especiales durante la lactancia para la prevención de la mastitis puerperal.</li>
+                                                        </ul>
+
+                                                    </p>
+
+
+                                                    <center><h:link class="btn btn-info" value="Inscribirme!"></h:link></center>
+
+                                                </div>
+                                            </h:form>
+                                        </div>
+
+                                    </div> <!-- end back panel -->
+                                </div> <!-- end card -->
+                            </div> <!-- end card-container -->
+                        </div> <!-- end col-sm-3 -->
+
+                        <div class="col-md-4 col-sm-2">
+                            <div class="card-container">
+                                <div class="card">
+                                    <div class="front">
+                                        <div class="cover" style="height: 160px;">
+
+                                            <img src="#{request.contextPath}/resources/img/imghome/posnatal/estetica.jpg"/>
+                                        </div>
+
+                                        <div class="content" style="padding: 0px 2px 0px;">
+                                            <div class="main">
+                                                <h3 class="name" style="font-size: 17px">Reducción de peso y medidas</h3>
+                                                <p class="profession">Talleres</p>
+
+                                                <p class="text-center" style="text-align: justify;padding: 15px;">Sesiones especializadas para <b>mujeres lactantes</b> en posparto o poscesárea:</p>
+                                            </div>
+                                            <div class="footer">
+                                                <i class="fa fa-mail-forward"></i> Inscribete
+                                            </div>
+                                        </div>
+                                    </div> <!-- end front panel -->
+                                    <div class="back">
+                                        <div class="header " style="height: 70px;">
+                                            <h5 class="motto">"Maternity Manager"</h5>
+                                        </div>
+                                        <div class="content" style="padding: 20px 20px 0px;">
+                                            <h:form>
+                                                <div class="main">
+                                                    <h4 class="text-center" style="margin: 0">Descripción</h4>
+                                                    <p class="text-center">Ralajate</p>
+                                                    <p class="profession">
+                                                        <ul style="padding: 0px 10px;">
+                                                            <li style="font-size: 13px;text-align: justify">Masajes Reductores.</li>
+                                                            <li style="font-size: 13px;text-align: justify">Drenajes Linfáticos.</li>
+                                                            <li style="font-size: 13px;text-align: justify">Aparatología Especializada.</li>
+                                                            <li style="font-size: 13px;text-align: justify">Moldeamiento, disminución de medidas, peso y tonificación muscular.</li>
+                                                            <li style="font-size: 13px;text-align: justify">Tratamientos para reducción de estrias y cicatriz queloide.</li>
+                                                        </ul>
+                                                    </p>
+
+
+                                                    <center><h:link class="btn btn-info" value="Inscribirme!"></h:link></center>
+
+                                                </div>
+                                            </h:form>
+                                        </div>
+
+                                    </div> <!-- end back panel -->
+                                </div> <!-- end card -->
+                            </div> <!-- end card-container -->
+                        </div> <!-- end col-sm-3 -->
+                    </div> <!-- end col-sm-10 -->
+                </b:row>
+
+
+
+
+            </div>
+        </div>
+
+
+
+    </ui:define>
+</ui:composition>
+
