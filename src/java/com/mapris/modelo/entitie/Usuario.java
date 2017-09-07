@@ -112,8 +112,8 @@ public class Usuario implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date fechaRegistro;
     @JoinTable(name = "rolesusuarios", joinColumns = {
-         @JoinColumn(name = "fk_id_usuario", referencedColumnName = "id_usuario")}, inverseJoinColumns = {
-       @JoinColumn(name = "fk_id_roles", referencedColumnName = "idRoles")})
+    @JoinColumn(name = "fk_id_usuario", referencedColumnName = "id_usuario")}, inverseJoinColumns = {
+    @JoinColumn(name = "fk_id_roles", referencedColumnName = "idRoles")})
     @ManyToMany
     private List<Rol> roles;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "usuario")
